@@ -1,0 +1,10 @@
+# Videos too large for GitHub hosting
+assetes/videos/
+
+# Unused brand PDF
+assetes/images/brands/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
