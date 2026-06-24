@@ -14,6 +14,7 @@
   --bg:#000;--bg2:#080808;--bg3:#0f0f0f;
   --fg:#f5f5f0;--fg2:rgba(245,245,240,.5);--fg3:rgba(245,245,240,.2);
   --stone:#b8a898;--brd:#1c1c1c;--brd2:#2a2a2a;
+  --acid:#c6f135;--retro-r:#e04030;--retro-c:#00bfa5;
   --fd:'Bebas Neue',sans-serif;
   --fm:'Space Mono',monospace;
   --ease:cubic-bezier(.25,.46,.45,.94);
@@ -81,7 +82,7 @@ nav.stk{background:rgba(0,0,0,.93);backdrop-filter:blur(16px);border-bottom-colo
 .mqt{display:flex;animation:mq 32s linear infinite;white-space:nowrap}
 .mqt:hover{animation-play-state:paused}
 .mqi{font-family:var(--fd);font-size:.78rem;letter-spacing:.26em;color:var(--stone);padding:0 1.8rem;display:flex;align-items:center;gap:1.8rem;flex-shrink:0}
-.mqi::after{content:'◆';font-size:.28rem;color:var(--brd2)}
+.mqi::after{content:'◆';font-size:.28rem;color:var(--acid)}
 @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ─ SECTION SHARED ─ */
@@ -106,6 +107,19 @@ section{padding:6.5rem 2.5rem}
 .about-close{margin-top:4.5rem;padding-top:2.5rem;border-top:1px solid var(--brd);display:flex;align-items:center;gap:3rem}
 .ac-word{font-family:var(--fd);font-size:clamp(2.8rem,7vw,6.5rem);color:#fff}
 .ac-sub{font-family:var(--fm);font-size:.54rem;line-height:2;color:var(--fg2);max-width:340px}
+
+/* ─ SERVICES ─ */
+#services{background:var(--bg2);padding:6.5rem 2.5rem;border-top:1px solid var(--brd)}
+.srv-list{border-bottom:1px solid var(--brd)}
+.srv{display:grid;grid-template-columns:88px 1fr auto;gap:0 2rem;padding:2.2rem 0;border-top:1px solid var(--brd);align-items:start;transition:background .25s}
+.srv:hover{background:rgba(255,255,255,.025)}
+.srv-num{font-family:var(--fd);font-size:4.2rem;line-height:1;color:var(--brd2)}
+.srv:nth-child(1) .srv-num,.srv:nth-child(4) .srv-num{color:var(--acid)}
+.srv:nth-child(2) .srv-num,.srv:nth-child(5) .srv-num{color:var(--retro-r)}
+.srv:nth-child(3) .srv-num,.srv:nth-child(6) .srv-num{color:var(--retro-c)}
+.srv-ttl{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.8rem);letter-spacing:.04em;color:#fff;margin-bottom:.65rem;line-height:.9}
+.srv-desc{font-family:var(--fm);font-size:.52rem;line-height:2.1;color:var(--fg2);max-width:520px}
+.srv-tag{font-family:var(--fm);font-size:.4rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);padding:.22rem .6rem;border:1px solid var(--brd2);white-space:nowrap;margin-top:.3rem;flex-shrink:0}
 
 /* ─ IDENTITY ─ */
 #identity{background:var(--bg2);padding-bottom:5rem}
@@ -205,22 +219,29 @@ section{padding:6.5rem 2.5rem}
 .vm-close:hover{border-color:#fff}
 
 /* ─ MUSIC COVERS ─ */
-#music{background:var(--bg2);padding:6.5rem 0 6.5rem 2.5rem}
+#music{background:#030406;padding:6.5rem 0 6.5rem 2.5rem;border-top:4px solid var(--acid)}
 .mc-hd{padding-right:2.5rem;margin-bottom:3rem}
 .mcwrap{overflow:hidden;width:100%}
-.mctrack{display:flex;gap:1px;animation:mcroll 28s linear infinite;background:var(--brd)}
+.mctrack{display:flex;gap:2px;animation:mcroll 36s linear infinite;background:transparent}
 .mctrack:hover{animation-play-state:paused}
-.mcc{flex-shrink:0;width:220px;background:var(--bg);cursor:pointer;position:relative}
-.mcc-vis{aspect-ratio:1;overflow:hidden;position:relative;background:var(--bg3)}
-.mcc-vis img{width:100%;height:100%;object-fit:cover;display:block}
+.mcc{flex-shrink:0;width:280px;cursor:pointer;position:relative;background:var(--bg);transition:transform .35s var(--ease)}
+.mcc:hover{transform:translateY(-5px)}
+.mcc:nth-child(6n+1){border-top:3px solid var(--acid)}
+.mcc:nth-child(6n+2){border-top:3px solid var(--retro-r)}
+.mcc:nth-child(6n+3){border-top:3px solid var(--retro-c)}
+.mcc:nth-child(6n+4){border-top:3px solid var(--stone)}
+.mcc:nth-child(6n+5){border-top:3px solid var(--acid)}
+.mcc:nth-child(6n){border-top:3px solid var(--retro-r)}
+.mcc-vis{width:100%;height:280px;overflow:hidden;position:relative;background:var(--bg3)}
+.mcc-vis img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .mcc-vis svg{width:100%;height:100%;display:block}
-.mcc-ov{position:absolute;inset:0;background:rgba(0,0,0,.7);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;opacity:0;transition:opacity .3s;z-index:2}
+.mcc-ov{position:absolute;inset:0;background:rgba(0,0,0,.72);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;opacity:0;transition:opacity .3s;z-index:2}
 .mcc:hover .mcc-ov{opacity:1}
-.mcc-ov-title{font-family:var(--fd);font-size:1rem;letter-spacing:.06em;color:#fff;text-align:center;padding:0 .5rem}
-.mcc-ov-sub{font-family:var(--fm);font-size:.4rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
-.mcc-bar{padding:.65rem .85rem;border-top:1px solid var(--brd);display:flex;justify-content:space-between;align-items:center}
+.mcc-ov-title{font-family:var(--fd);font-size:1.3rem;letter-spacing:.06em;color:#fff;text-align:center;padding:0 1rem}
+.mcc-ov-sub{font-family:var(--fm);font-size:.4rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.mcc-bar{padding:.72rem 1rem;border-top:1px solid var(--brd);display:flex;justify-content:space-between;align-items:center;background:var(--bg)}
 .mcc-name{font-family:var(--fm);font-size:.44rem;color:#fff;letter-spacing:.04em}
-.mcc-type{font-family:var(--fm);font-size:.38rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.mcc-type{font-family:var(--fm);font-size:.38rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
 @keyframes mcroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ─ SOCIAL MEDIA POSTS ─ */
@@ -246,27 +267,40 @@ section{padding:6.5rem 2.5rem}
 @keyframes psroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ─ ARTS ─ */
-#arts{background:#0a0806;border-top:4px solid var(--stone)}
-.arts-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--brd)}
+#arts{background:#09060a;border-top:4px solid var(--retro-r);padding:6.5rem 2.5rem}
+#arts .shd{margin-bottom:3rem}
+.arts-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:var(--brd)}
 .art-card{position:relative;overflow:hidden;background:var(--bg);cursor:pointer}
-.art-vis{overflow:hidden;position:relative;aspect-ratio:3/4}
+/* Layout: row 1 = 3 equal portrait cards; row 2 = 2 wide landscape cards */
+.art-card:nth-child(1),.art-card:nth-child(2),.art-card:nth-child(3){grid-column:span 2}
+.art-card:nth-child(4),.art-card:nth-child(5){grid-column:span 3}
+.art-vis{overflow:hidden;position:relative;aspect-ratio:2/3}
+.art-card:nth-child(4) .art-vis,.art-card:nth-child(5) .art-vis{aspect-ratio:16/9}
 .art-vis img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease)}
-.art-card:hover .art-vis img{transform:scale(1.07)}
-/* clip-path reveal on scroll — triggered by parent .rv.on */
+.art-card:hover .art-vis img{transform:scale(1.06)}
+/* gallery number */
+.art-num{position:absolute;top:.75rem;left:.85rem;font-family:var(--fd);font-size:.95rem;letter-spacing:.04em;z-index:3;opacity:.5;transition:opacity .3s}
+.art-card:hover .art-num{opacity:1}
+/* clip-path reveal on scroll */
 .arts-grid .art-card{clip-path:inset(102% 0 0 0);transition:clip-path 1s cubic-bezier(.16,1,.3,1)}
 .arts-grid.on .art-card{clip-path:inset(0% 0 0 0)}
 .arts-grid.on .art-card:nth-child(1){transition-delay:.05s}
-.arts-grid.on .art-card:nth-child(2){transition-delay:.16s}
-.arts-grid.on .art-card:nth-child(3){transition-delay:.27s}
-.arts-grid.on .art-card:nth-child(4){transition-delay:.38s}
-.arts-grid.on .art-card:nth-child(5){transition-delay:.49s}
-/* glow border on hover */
-.art-card::after{content:'';position:absolute;inset:0;border:2px solid transparent;pointer-events:none;transition:border-color .4s,box-shadow .4s;z-index:4}
-.art-card:hover::after{border-color:var(--stone);box-shadow:inset 0 0 30px rgba(184,168,152,.08)}
-/* overlay slides up */
-.art-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0,rgba(0,0,0,.1) 60%,transparent 100%);display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:.3rem;padding:.9rem;opacity:0;transform:translateY(8px);transition:opacity .38s,transform .38s;z-index:2}
+.arts-grid.on .art-card:nth-child(2){transition-delay:.17s}
+.arts-grid.on .art-card:nth-child(3){transition-delay:.29s}
+.arts-grid.on .art-card:nth-child(4){transition-delay:.41s}
+.arts-grid.on .art-card:nth-child(5){transition-delay:.53s}
+/* retro color border on hover, cycling */
+.art-card::after{content:'';position:absolute;inset:0;border:2px solid transparent;pointer-events:none;transition:border-color .35s;z-index:4}
+.art-card:nth-child(1)::after,.art-card:nth-child(4)::after{border-color:transparent}
+.art-card:nth-child(1):hover::after{border-color:var(--acid)}
+.art-card:nth-child(2):hover::after{border-color:var(--retro-r)}
+.art-card:nth-child(3):hover::after{border-color:var(--retro-c)}
+.art-card:nth-child(4):hover::after{border-color:var(--acid)}
+.art-card:nth-child(5):hover::after{border-color:var(--retro-r)}
+/* overlay */
+.art-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0,rgba(0,0,0,.1) 55%,transparent 100%);display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:.35rem;padding:1rem;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s;z-index:2}
 .art-card:hover .art-ov{opacity:1;transform:none}
-.art-ov-title{font-family:var(--fd);font-size:1.3rem;letter-spacing:.06em;color:#fff;line-height:1}
+.art-ov-title{font-family:var(--fd);font-size:1.4rem;letter-spacing:.06em;color:#fff;line-height:.95}
 .art-ov-type{font-family:var(--fm);font-size:.4rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
 .art-bar{padding:.7rem .9rem;border-top:1px solid var(--brd);display:flex;justify-content:space-between;align-items:center;background:var(--bg)}
 .art-name{font-family:var(--fm);font-size:.44rem;color:#fff}
@@ -355,6 +389,7 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   </a>
   <ul class="nlinks">
     <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#videos">Videos</a></li>
     <li><a href="#music">Music</a></li>
     <li><a href="#posts">Posts</a></li>
@@ -435,6 +470,78 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   </div>
 </section>
 
+<!-- SERVICES -->
+<section id="services">
+  <div class="shd rv">
+    <div><div class="sn">What We Do</div><h2 class="sttl">SIX<br>CRAFTS</h2></div>
+    <p class="ssub">Built for brands<br>that refuse<br>to be boring.</p>
+  </div>
+  <div class="srv-list">
+    <div class="srv rv" style="transition-delay:.04s">
+      <div class="srv-num">01</div>
+      <div class="srv-body">
+        <div class="srv-ttl">BRAND IDENTITY</div>
+        <div class="srv-desc">Logo systems, visual guidelines, typography and colour palettes. We build the language a brand speaks — and make sure the world actually listens. Every mark is intentional. Every colour earns its place.</div>
+      </div>
+      <div class="srv-tag">Identity</div>
+    </div>
+    <div class="srv rv" style="transition-delay:.08s">
+      <div class="srv-num">02</div>
+      <div class="srv-body">
+        <div class="srv-ttl">SOCIAL MEDIA</div>
+        <div class="srv-desc">Feed posts, Reels, Stories, campaigns. Content designed to stop the scroll, build an audience, and keep them coming back. Strategy meets aesthetics — every pixel earns its place in the algorithm.</div>
+      </div>
+      <div class="srv-tag">Content</div>
+    </div>
+    <div class="srv rv" style="transition-delay:.12s">
+      <div class="srv-num">03</div>
+      <div class="srv-body">
+        <div class="srv-ttl">MUSIC COVER ART</div>
+        <div class="srv-desc">Album sleeves, single covers, EP artwork and artist visuals. Sound deserves a face. We give music a visual world it can live inside — before anyone presses play and long after the song ends.</div>
+      </div>
+      <div class="srv-tag">Music</div>
+    </div>
+    <div class="srv rv" style="transition-delay:.16s">
+      <div class="srv-num">04</div>
+      <div class="srv-body">
+        <div class="srv-ttl">SHOWS &amp; EVENTS</div>
+        <div class="srv-desc">Full coverage of festivals, club nights, live performances and brand activations. We document energy in motion — raw, real, and cinematic — so the moment lasts longer than the night itself.</div>
+      </div>
+      <div class="srv-tag">Production</div>
+    </div>
+    <div class="srv rv" style="transition-delay:.20s">
+      <div class="srv-num">05</div>
+      <div class="srv-body">
+        <div class="srv-ttl">GRAFFITI &amp; ART</div>
+        <div class="srv-desc">Street murals, canvas paintings, pop art commissions and gallery pieces. Culture you can see from across the street. Art that refuses to sit still inside a frame — made to be felt, not just seen.</div>
+      </div>
+      <div class="srv-tag">Art</div>
+    </div>
+    <div class="srv rv" style="transition-delay:.24s">
+      <div class="srv-num">06</div>
+      <div class="srv-body">
+        <div class="srv-ttl">WEB DESIGN</div>
+        <div class="srv-desc">Custom websites built from scratch for brands, artists and events. Fast, sharp and designed to convert — not just to look good in Figma. We build digital homes that actually do the work.</div>
+      </div>
+      <div class="srv-tag">Digital</div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND IDENTITY -->
+<section id="identity">
+  <div class="shd rv">
+    <div><div class="sn">Identity Work</div><h2 class="sttl">BRAND<br>IDENTITY</h2></div>
+    <p class="ssub">Visual systems, logos and full brand guidelines built to last.</p>
+  </div>
+  <div class="rv" style="transition-delay:.06s;border:1px solid var(--brd);padding:5rem 2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;text-align:center;background:var(--bg3)">
+    <div style="width:60px;height:60px;border:1px solid var(--brd2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.4rem;color:var(--stone)">EH</div>
+    <div style="font-family:var(--fd);font-size:clamp(2rem,5vw,4rem);color:var(--fg3);letter-spacing:.12em">CASE STUDIES COMING SOON</div>
+    <p style="font-family:var(--fm);font-size:.5rem;color:var(--fg3);letter-spacing:.1em;max-width:400px;line-height:2.1">Brand identity work is being curated here. Each project will include logo system, colour palette, typography, motion and full visual guidelines.</p>
+    <div style="width:80px;height:1px;background:var(--brd2)"></div>
+  </div>
+</section>
+
 <!-- VIDEOS -->
 <section id="videos">
   <div class="shd vid-hd rv">
@@ -474,30 +581,35 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 <section id="arts">
   <div class="shd rv">
     <div><div class="sn">04b — Arts</div><h2 class="sttl">GRAFFITI<br>&amp; ART</h2></div>
-    <p class="ssub">Pop art paintings, mixed media, original canvas works.</p>
+    <p class="ssub">Pop art paintings, mixed media, original canvas works. Culture you can touch.</p>
   </div>
   <div class="arts-grid rv">
     <div class="art-card">
-      <div class="art-vis"><img src="./assetes/images/arts/art-1.jpg" alt="Looney Tach"></div>
+      <div class="art-num">NO.01</div>
+      <div class="art-vis"><img src="./assetes/images/arts/art-1.png" alt="Looney Tach"></div>
       <div class="art-ov"><div class="art-ov-title">LOONEY TACH!</div><div class="art-ov-type">Pop Art · Acrylic on Canvas</div></div>
       <div class="art-bar"><span class="art-name">Looney Tach!</span><span class="art-tp">Painting</span></div>
     </div>
     <div class="art-card">
+      <div class="art-num">NO.02</div>
       <div class="art-vis"><img src="./assetes/images/arts/scarface.png" alt="Scarface"></div>
       <div class="art-ov"><div class="art-ov-title">SCARFACE</div><div class="art-ov-type">Portrait · Oil on Canvas</div></div>
       <div class="art-bar"><span class="art-name">Scarface</span><span class="art-tp">Portrait</span></div>
     </div>
     <div class="art-card">
+      <div class="art-num">NO.03</div>
       <div class="art-vis"><img src="./assetes/images/arts/art-2.jpg" alt="Scrooge"></div>
       <div class="art-ov"><div class="art-ov-title">SCROOGE</div><div class="art-ov-type">Pop Art · Acrylic on Canvas</div></div>
       <div class="art-bar"><span class="art-name">Scrooge</span><span class="art-tp">Painting</span></div>
     </div>
     <div class="art-card">
+      <div class="art-num">NO.04</div>
       <div class="art-vis"><img src="./assetes/images/arts/art-3.jpg" alt="Sylvester x LV"></div>
       <div class="art-ov"><div class="art-ov-title">SYLVESTER × LV</div><div class="art-ov-type">Mixed Media · Fashion Art</div></div>
       <div class="art-bar"><span class="art-name">Sylvester × LV</span><span class="art-tp">Mixed Media</span></div>
     </div>
     <div class="art-card">
+      <div class="art-num">NO.05</div>
       <div class="art-vis"><img src="./assetes/images/arts/tab-01.png" alt="Zeus Reloaded"></div>
       <div class="art-ov"><div class="art-ov-title">ZEUS RELOADED</div><div class="art-ov-type">Graffiti × Fine Art</div></div>
       <div class="art-bar"><span class="art-name">Zeus Reloaded</span><span class="art-tp">Graffiti Art</span></div>
@@ -542,8 +654,8 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   <div class="ft">
     <div><div class="ftl">EMPTY HEADS</div><div class="ftt">Design Studio — Est. 2024</div></div>
     <div class="ftc">
-      <div><h4>Work</h4><a href="#videos">Videos &amp; Reels</a><a href="#music">Music Covers</a><a href="#posts">Social Posts</a><a href="#arts">Arts &amp; Graffiti</a><a href="#websites">Websites</a></div>
-      <div><h4>Studio</h4><a href="#about">About Us</a><a href="#contact">Contact</a><a href="#">Process</a></div>
+      <div><h4>Work</h4><a href="#identity">Brand Identity</a><a href="#videos">Videos &amp; Reels</a><a href="#music">Music Covers</a><a href="#posts">Social Posts</a><a href="#arts">Arts &amp; Graffiti</a><a href="#websites">Websites</a></div>
+      <div><h4>Studio</h4><a href="#about">About Us</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
       <div><h4>Connect</h4><a href="#">Instagram</a><a href="#">Behance</a><a href="#">LinkedIn</a></div>
     </div>
   </div>
@@ -685,12 +797,12 @@ const musicCovers=[
   {name:'STATIC',type:'Album',svgId:'m6'},
 ];
 const musicSVGs={
-  m1:`<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="220" fill="#050510"/><defs><radialGradient id="mm1" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#4010b0" stop-opacity=".9"/><stop offset="100%" stop-color="#050510" stop-opacity="0"/></radialGradient></defs><rect width="220" height="220" fill="url(#mm1)"/><polygon points="110,28 140,100 110,100" fill="rgba(255,255,255,.85)"/><polygon points="110,192 80,100 110,100" fill="rgba(255,255,255,.32)"/><line x1="0" y1="100" x2="220" y2="100" stroke="rgba(255,255,255,.06)"/></svg>`,
-  m2:`<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="220" fill="#080808"/><circle cx="110" cy="110" r="82" fill="none" stroke="rgba(184,168,152,.12)"/><circle cx="110" cy="110" r="52" fill="none" stroke="rgba(184,168,152,.18)"/><circle cx="110" cy="110" r="22" fill="none" stroke="rgba(184,168,152,.28)"/><circle cx="110" cy="110" r="5" fill="rgba(184,168,152,.6)"/></svg>`,
-  m3:`<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="220" fill="#0a0600"/><defs><linearGradient id="mm3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e06010" stop-opacity=".7"/><stop offset="100%" stop-color="#0a0600" stop-opacity="0"/></linearGradient></defs><rect width="220" height="220" fill="url(#mm3)"/><rect x="30" y="88" width="160" height="44" fill="rgba(224,96,16,.1)" stroke="rgba(224,96,16,.3)" stroke-width=".5"/><text x="110" y="114" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="20" fill="white" letter-spacing="4">COLLECTIVE</text></svg>`,
-  m4:`<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="220" fill="#040810"/><defs><radialGradient id="mm4" cx="50%" cy="50%" r="55%"><stop offset="0%" stop-color="#1060d0" stop-opacity=".7"/><stop offset="100%" stop-color="#040810" stop-opacity="0"/></radialGradient></defs><rect width="220" height="220" fill="url(#mm4)"/><rect x="42" y="42" width="136" height="136" fill="none" stroke="rgba(16,96,208,.35)" stroke-width=".6"/><rect x="66" y="66" width="88" height="88" fill="none" stroke="rgba(16,96,208,.25)" stroke-width=".6"/><rect x="90" y="90" width="40" height="40" fill="rgba(16,96,208,.15)"/></svg>`,
-  m5:`<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="220" fill="#060606"/><defs><pattern id="mp5b" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="14" y2="0" stroke="#101010" stroke-width=".5"/><line x1="0" y1="0" x2="0" y2="14" stroke="#101010" stroke-width=".5"/></pattern></defs><rect width="220" height="220" fill="url(#mp5b)"/><rect x="36" y="96" width="148" height="28" fill="rgba(255,255,255,.9)"/><text x="110" y="112" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="18" fill="#000" letter-spacing="6">RAW CUT 001</text></svg>`,
-  m6:`<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="220" fill="#040404"/><defs><pattern id="mp6b" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".6" fill="rgba(255,255,255,.08)"/></pattern></defs><rect width="220" height="220" fill="url(#mp6b)"/><text x="110" y="118" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="38" fill="rgba(255,255,255,.9)" letter-spacing="2">STATIC</text></svg>`,
+  m1:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#0d0225"/><polygon points="140,38 226,206 54,206" fill="none" stroke="#c6f135" stroke-width="1.8"/><polygon points="140,80 200,186 80,186" fill="#c6f135" opacity=".08"/><line x1="0" y1="206" x2="280" y2="206" stroke="#c6f135" stroke-width=".7" opacity=".5"/><text x="140" y="234" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="9" fill="#c6f135" letter-spacing="8" opacity=".7">RIFT — FREQUENCY</text></svg>`,
+  m2:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#04050e"/><circle cx="140" cy="130" r="96" fill="none" stroke="#00bfa5" stroke-width="1.4" opacity=".9"/><circle cx="140" cy="130" r="64" fill="none" stroke="#00bfa5" stroke-width="1" opacity=".6"/><circle cx="140" cy="130" r="32" fill="none" stroke="#00bfa5" stroke-width=".7" opacity=".4"/><circle cx="140" cy="130" r="7" fill="#00bfa5" opacity=".95"/><text x="140" y="250" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="9" fill="#00bfa5" letter-spacing="8" opacity=".7">NIGHT SESSIONS</text></svg>`,
+  m3:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#1a0600"/><defs><linearGradient id="mm3g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e04030" stop-opacity=".95"/><stop offset="100%" stop-color="#ff8020" stop-opacity=".25"/></linearGradient></defs><rect width="280" height="280" fill="url(#mm3g)"/><rect x="22" y="110" width="236" height="60" fill="rgba(0,0,0,.6)"/><text x="140" y="144" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="24" fill="white" letter-spacing="6">COLLECTIVE</text><text x="22" y="100" font-family="'Bebas Neue',sans-serif" font-size="9" fill="rgba(255,255,255,.4)" letter-spacing="5">VOL.1</text></svg>`,
+  m4:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#010c14"/><rect x="44" y="44" width="192" height="192" fill="none" stroke="#00bfa5" stroke-width="1.4" opacity=".75"/><rect x="80" y="80" width="120" height="120" fill="none" stroke="#00bfa5" stroke-width=".9" opacity=".5"/><rect x="116" y="116" width="48" height="48" fill="rgba(0,191,165,.18)"/><text x="140" y="254" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="9" fill="#00bfa5" letter-spacing="6" opacity=".7">ECHO CHAMBER</text></svg>`,
+  m5:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#050505"/><defs><pattern id="mp5g" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="14" y2="0" stroke="#111" stroke-width=".6"/><line x1="0" y1="0" x2="0" y2="14" stroke="#111" stroke-width=".6"/></pattern></defs><rect width="280" height="280" fill="url(#mp5g)"/><rect x="0" y="114" width="280" height="52" fill="#c6f135"/><text x="140" y="142" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="22" fill="#000" letter-spacing="8">RAW CUT 001</text></svg>`,
+  m6:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#050505"/><defs><pattern id="mp6d" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r=".6" fill="rgba(255,255,255,.07)"/></pattern></defs><rect width="280" height="280" fill="url(#mp6d)"/><text x="140" y="148" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="52" fill="rgba(255,255,255,.92)" letter-spacing="1">STATIC</text><line x1="22" y1="176" x2="258" y2="176" stroke="rgba(255,255,255,.15)" stroke-width=".8"/></svg>`,
 };
 
 const mt=document.getElementById('musicTrack');
