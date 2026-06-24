@@ -123,22 +123,18 @@ section{padding:6.5rem 2.5rem}
 
 /* ─ IDENTITY ─ */
 #identity{background:var(--bg2);padding-bottom:5rem}
-.idg{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--brd)}
-.bc{position:relative;overflow:hidden;background:var(--bg);transition:outline .3s;cursor:pointer;outline:1px solid transparent}
+.idwrap{overflow:hidden;width:100%}
+.idtrack{display:flex;gap:2px;animation:idroll 22s linear infinite;width:max-content}
+.idtrack:hover{animation-play-state:paused}
+@keyframes idroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.bc{flex-shrink:0;width:420px;position:relative;overflow:hidden;background:var(--bg);transition:outline .3s;cursor:pointer;outline:1px solid transparent}
 .bc:hover{outline-color:var(--stone);z-index:2}
-.bc:nth-child(1){grid-column:1/7}.bc:nth-child(2){grid-column:7/13}
-.bc:nth-child(3){grid-column:1/5}.bc:nth-child(4){grid-column:5/10}.bc:nth-child(5){grid-column:10/13}
 
-/* hover-scroll: the inner image slides upward */
-.bc-vis{height:360px;overflow:hidden;position:relative;background:var(--bg3)}
-.bc:nth-child(1) .bc-vis,.bc:nth-child(2) .bc-vis{height:440px}
+.bc-vis{height:380px;overflow:hidden;position:relative;background:var(--bg3)}
 .bc-scroll{position:absolute;top:0;left:0;right:0;transform:translateY(0);transition:transform 13s ease-out;will-change:transform}
-.bc:hover .bc-scroll{transform:translateY(calc(-100% + 360px))}
-.bc:nth-child(1):hover .bc-scroll,.bc:nth-child(2):hover .bc-scroll{transform:translateY(calc(-100% + 440px))}
+.bc:hover .bc-scroll{transform:translateY(calc(-100% + 380px))}
 .bc-scroll img{width:100%;height:auto;display:block}
-/* SVG fallback shown when no image */
-.bc-svg{width:100%;height:360px;display:block}
-.bc:nth-child(1) .bc-svg,.bc:nth-child(2) .bc-svg{height:440px}
+.bc-svg{width:100%;height:380px;display:block}
 
 .bc-info{padding:1.2rem 1.4rem;border-top:1px solid var(--brd);background:var(--bg)}
 .bc-tag{font-family:var(--fm);font-size:.42rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);margin-bottom:.4rem}
@@ -347,14 +343,24 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 .ftsoc a{font-family:var(--fm);font-size:.42rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--fg3);text-decoration:none;transition:color .25s}
 .ftsoc a:hover{color:var(--stone)}
 
+/* ─ 3D FLOATING ICONS ─ */
+#services,#videos,#music,#posts,#arts,#identity{position:relative}
+.icon3d{position:absolute;pointer-events:none;z-index:1}
+.icon3d-i{display:block;will-change:transform;transform-origin:center center}
+.i3a .icon3d-i{animation:ifloat var(--id,7s) ease-in-out infinite var(--idl,0s)}
+.i3b .icon3d-i{animation:ifloat2 var(--id,9s) ease-in-out infinite var(--idl,0s)}
+.icon3d svg{filter:drop-shadow(0 0 10px var(--ic,rgba(198,241,53,.5)))}
+@keyframes ifloat{0%,100%{transform:translateY(0) rotate(0deg)}40%{transform:translateY(-16px) rotate(4deg)}70%{transform:translateY(-8px) rotate(-2deg)}}
+@keyframes ifloat2{0%,100%{transform:translateY(0) rotate(0deg)}30%{transform:translateY(-12px) rotate(-4deg)}65%{transform:translateY(-20px) rotate(3deg)}}
+
 @media(max-width:960px){
   nav{padding:0 1.2rem}.nlinks{display:none}
   .hero,section,#about,#videos,#music,#posts{padding-left:1.2rem;padding-right:1.2rem}
+  .icon3d{display:none}
   .vid-hd,.mc-hd,.posts-hd{padding-right:1.2rem}
   .hstats{gap:1.5rem}
-  .idg{grid-template-columns:1fr 1fr}
-  .bc:nth-child(n){grid-column:span 1}.bc:nth-child(5){grid-column:span 2}
-  .shows-grid{grid-template-columns:1fr;margin-right:1.2rem}
+  .bc{width:300px}
+.shows-grid{grid-template-columns:1fr;margin-right:1.2rem}
   .arts-grid{grid-template-columns:repeat(2,1fr)}
   .wg{grid-template-columns:1fr}
   .arts-grid{grid-template-columns:1fr 1fr}
@@ -402,6 +408,10 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 <!-- HERO -->
 <section class="hero">
   <div class="hglow"></div>
+<span class="icon3d i3a" style="top:18%;right:14%;--id:9s;--idl:0s;--ic:rgba(198,241,53,.55)"><span class="icon3d-i"><svg width="56" height="56" viewBox="0 0 56 56" fill="none"><rect x="4" y="16" width="48" height="34" rx="5" stroke="#c6f135" stroke-width="1.5" fill="#c6f135" fill-opacity=".05"/><circle cx="28" cy="33" r="11" stroke="#c6f135" stroke-width="1.5"/><circle cx="28" cy="33" r="5" fill="#c6f135" fill-opacity=".3"/><path d="M18 16l5-7h10l5 7" stroke="#c6f135" stroke-width="1.5" stroke-linejoin="round"/><circle cx="44" cy="23" r="2.5" fill="#c6f135"/></svg></span></span>
+<span class="icon3d i3b" style="top:48%;left:3%;--id:11s;--idl:2s;--ic:rgba(224,64,48,.5)"><span class="icon3d-i"><svg width="44" height="44" viewBox="0 0 44 44" fill="none"><polygon points="22,3 41,22 22,41 3,22" stroke="#e04030" stroke-width="1.5" fill="#e04030" fill-opacity=".07"/><polygon points="22,3 41,22 22,14" fill="#e04030" fill-opacity=".28"/><polygon points="22,41 3,22 22,30" fill="#e04030" fill-opacity=".14"/></svg></span></span>
+<span class="icon3d i3a" style="bottom:24%;left:19%;--id:13s;--idl:4s;--ic:rgba(0,191,165,.45)"><span class="icon3d-i"><svg width="50" height="56" viewBox="0 0 50 56" fill="none"><path d="M14 44V12L44 5V37" stroke="#00bfa5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="44" r="6" stroke="#00bfa5" stroke-width="1.5" fill="#00bfa5" fill-opacity=".12"/><circle cx="39" cy="37" r="6" stroke="#00bfa5" stroke-width="1.5" fill="#00bfa5" fill-opacity=".12"/></svg></span></span>
+<span class="icon3d i3b" style="top:26%;left:36%;--id:17s;--idl:1s;--ic:rgba(184,168,152,.3)"><span class="icon3d-i"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 2L19 11H28L21 17.5L23.5 27L15 21.5L6.5 27L9 17.5L2 11H11Z" stroke="#b8a898" stroke-width="1.2" fill="#b8a898" fill-opacity=".1"/></svg></span></span>
   <div class="heyebrow">Creative Studio — Est. 2024</div>
   <h1 class="hh1">
     <span class="wl"><span>EMPTY</span></span>
@@ -472,6 +482,8 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 
 <!-- SERVICES -->
 <section id="services">
+<span class="icon3d i3a" style="top:2.5rem;right:4rem;--id:8s;--idl:.5s;--ic:rgba(198,241,53,.45)"><span class="icon3d-i"><svg width="38" height="54" viewBox="0 0 38 54" fill="none"><path d="M21 4L3 28H19L17 50L35 26H19L21 4Z" stroke="#c6f135" stroke-width="1.5" stroke-linejoin="round" fill="#c6f135" fill-opacity=".1"/></svg></span></span>
+<span class="icon3d i3b" style="bottom:4rem;left:3rem;--id:12s;--idl:2.5s;--ic:rgba(0,191,165,.4)"><span class="icon3d-i"><svg width="42" height="42" viewBox="0 0 42 42" fill="none"><circle cx="21" cy="21" r="18" stroke="#00bfa5" stroke-width="1.2"/><circle cx="21" cy="21" r="10" stroke="#00bfa5" stroke-width="1.2" fill="#00bfa5" fill-opacity=".08"/><line x1="21" y1="3" x2="21" y2="39" stroke="#00bfa5" stroke-width=".8" stroke-dasharray="2 5"/><line x1="3" y1="21" x2="39" y2="21" stroke="#00bfa5" stroke-width=".8" stroke-dasharray="2 5"/></svg></span></span>
   <div class="shd rv">
     <div><div class="sn">What We Do</div><h2 class="sttl">SIX<br>CRAFTS</h2></div>
     <p class="ssub">Built for brands<br>that refuse<br>to be boring.</p>
@@ -530,12 +542,13 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 
 <!-- BRAND IDENTITY -->
 <section id="identity">
+<span class="icon3d i3b" style="top:2rem;right:3rem;--id:10s;--idl:0s;--ic:rgba(184,168,152,.4)"><span class="icon3d-i"><svg width="52" height="52" viewBox="0 0 52 52" fill="none"><polygon points="26,3 49,26 26,49 3,26" stroke="#b8a898" stroke-width="1.2" fill="#b8a898" fill-opacity=".05"/><polygon points="26,3 49,26 26,17" fill="#b8a898" fill-opacity=".22"/><polygon points="26,49 3,26 26,35" fill="#b8a898" fill-opacity=".12"/></svg></span></span>
   <div class="shd rv">
     <div><div class="sn">Identity Work</div><h2 class="sttl">BRAND<br>IDENTITY</h2></div>
     <p class="ssub">Visual systems, logos and full brand guidelines built to last.</p>
   </div>
-  <div class="idg">
-    <div class="bc rv" style="transition-delay:.04s" onclick="openPDF('./assetes/images/brands/fc morokko herne_compressed.pdf','FC MOROKKO HERNE')">
+  <div class="idwrap"><div class="idtrack" id="idTrack">
+    <div class="bc" onclick="openPDF('./assetes/images/brands/fc morokko herne_compressed.pdf','FC MOROKKO HERNE')">
       <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="bc-vis" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem">
         <svg viewBox="0 0 200 200" width="120" height="120" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="90" fill="none" stroke="rgba(184,168,152,.2)" stroke-width="1"/><circle cx="100" cy="100" r="60" fill="none" stroke="rgba(184,168,152,.3)" stroke-width="1"/><text x="100" y="108" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="20" fill="rgba(255,255,255,.85)" letter-spacing="2">FCM</text></svg>
@@ -543,7 +556,7 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
       </div>
       <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">FC MOROKKO HERNE</div><div class="bc-desc">Football Club — Logo, Kit, Visual System</div></div>
     </div>
-    <div class="bc rv" style="transition-delay:.08s" onclick="openPDF('./assetes/images/brands/l avenue 19_compressed.pdf','L\'AVENUE 19')">
+    <div class="bc" onclick="openPDF('./assetes/images/brands/l avenue 19_compressed.pdf','L\'AVENUE 19')">
       <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="bc-vis" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem">
         <svg viewBox="0 0 200 200" width="120" height="120" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="80" width="160" height="40" fill="none" stroke="rgba(184,168,152,.25)" stroke-width="1"/><text x="100" y="104" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="16" fill="rgba(255,255,255,.85)" letter-spacing="3">L'AVENUE</text><rect x="60" y="130" width="80" height="1" fill="rgba(198,241,53,.5)"/></svg>
@@ -551,7 +564,7 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
       </div>
       <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">L'AVENUE 19</div><div class="bc-desc">Luxury Venue — Branding, Signage, Typography</div></div>
     </div>
-    <div class="bc rv" style="transition-delay:.12s;grid-column:1/13" onclick="openPDF('./assetes/images/brands/olampic dchira_compressed.pdf','OLYMPIC DCHIRA')">
+    <div class="bc" onclick="openPDF('./assetes/images/brands/olampic dchira_compressed.pdf','OLYMPIC DCHIRA')">
       <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="bc-vis" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem">
         <svg viewBox="0 0 200 200" width="120" height="120" xmlns="http://www.w3.org/2000/svg"><polygon points="100,20 180,80 155,170 45,170 20,80" fill="none" stroke="rgba(224,64,48,.6)" stroke-width="1.5"/><text x="100" y="104" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="14" fill="rgba(255,255,255,.85)" letter-spacing="2">OLYMPIC</text></svg>
@@ -559,11 +572,12 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
       </div>
       <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">OLYMPIC DCHIRA</div><div class="bc-desc">Sports Club — Full Visual Identity, Colours, Logo System</div></div>
     </div>
-  </div>
+  </div></div>
 </section>
 
 <!-- VIDEOS -->
 <section id="videos">
+<span class="icon3d i3a" style="top:2rem;right:4rem;--id:8s;--idl:1s;--ic:rgba(224,64,48,.55)"><span class="icon3d-i"><svg width="58" height="58" viewBox="0 0 58 58" fill="none"><circle cx="29" cy="29" r="24" stroke="#e04030" stroke-width="1.5" fill="#e04030" fill-opacity=".05"/><polygon points="23,18 23,40 44,29" fill="#e04030" fill-opacity=".75"/></svg></span></span>
   <div class="shd vid-hd rv">
     <div><div class="sn">02 / 05 — Videos</div><h2 class="sttl">REELS &amp;<br>SHOWS</h2></div>
     <p class="ssub" style="padding-right:2.5rem">Social media reels, brand films, live events and festival coverage.</p>
@@ -576,6 +590,7 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 
 <!-- MUSIC COVERS -->
 <section id="music">
+<span class="icon3d i3b" style="top:1.5rem;right:2.5rem;--id:7s;--idl:0s;--ic:rgba(198,241,53,.55)"><span class="icon3d-i"><svg width="58" height="64" viewBox="0 0 58 64" fill="none"><path d="M18 50V14L50 6V42" stroke="#c6f135" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="50" r="7" stroke="#c6f135" stroke-width="1.5" fill="#c6f135" fill-opacity=".12"/><circle cx="44" cy="42" r="7" stroke="#c6f135" stroke-width="1.5" fill="#c6f135" fill-opacity=".12"/></svg></span></span>
   <div class="shd mc-hd rv">
     <div><div class="sn">03 / 05 — Music</div><h2 class="sttl">MUSIC<br>COVERS</h2></div>
     <p class="ssub" style="padding-right:2.5rem">Album art, single covers, EP artwork. Visual identity for sound.</p>
@@ -585,6 +600,7 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 
 <!-- SOCIAL MEDIA POSTS -->
 <section id="posts">
+<span class="icon3d i3a" style="top:2rem;right:3rem;--id:10s;--idl:1s;--ic:rgba(184,168,152,.4)"><span class="icon3d-i"><svg width="52" height="46" viewBox="0 0 52 46" fill="none"><rect x="3" y="12" width="46" height="30" rx="4" stroke="#b8a898" stroke-width="1.5" fill="#b8a898" fill-opacity=".04"/><circle cx="26" cy="27" r="10" stroke="#b8a898" stroke-width="1.5"/><circle cx="26" cy="27" r="4" fill="#b8a898" fill-opacity=".3"/><path d="M16 12l6-8h8l6 8" stroke="#b8a898" stroke-width="1.5" stroke-linejoin="round"/><circle cx="42" cy="18" r="3" fill="#b8a898" fill-opacity=".6"/></svg></span></span>
   <div class="shd posts-hd rv">
     <div><div class="sn">04 / 05 — Posts</div><h2 class="sttl">SOCIAL<br>MEDIA</h2></div>
     <p class="ssub" style="padding-right:2.5rem">Feed posts, stories, campaigns. Content that stops the scroll.</p>
@@ -599,6 +615,7 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 
 <!-- ARTS -->
 <section id="arts">
+<span class="icon3d i3a" style="top:2rem;right:3.5rem;--id:9s;--idl:.5s;--ic:rgba(224,64,48,.45)"><span class="icon3d-i"><svg width="50" height="50" viewBox="0 0 50 50" fill="none"><path d="M6 44c4-12 12-20 22-22L44 8 6 44z" stroke="#e04030" stroke-width="1.5" stroke-linejoin="round" fill="#e04030" fill-opacity=".08"/><circle cx="7" cy="43" r="6" stroke="#e04030" stroke-width="1.5" fill="#e04030" fill-opacity=".12"/><circle cx="38" cy="12" r="4" fill="#e04030" fill-opacity=".45"/></svg></span></span>
   <div class="shd rv">
     <div><div class="sn">04b — Arts</div><h2 class="sttl">GRAFFITI<br>&amp; ART</h2></div>
     <p class="ssub">Pop art paintings, mixed media, original canvas works. Culture you can touch.</p>
@@ -783,6 +800,13 @@ const rt=document.getElementById('reelsTrack');
 [...reelsData,...reelsData].forEach(d=>rt.appendChild(mkReelCard(d)));
 addHover('.vr');
 
+// Autoplay reel videos when visible in viewport
+const reelIO=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting)e.target.play().catch(()=>{});
+  else e.target.pause();
+}),{threshold:0.1});
+document.querySelectorAll('#reelsTrack video').forEach(v=>reelIO.observe(v));
+
 // ── Video modal — supports both file videos and external iframes ───────────
 const vmodal=document.getElementById('vmodal');
 const vmContent=document.getElementById('vmContent');
@@ -910,6 +934,13 @@ buildTrack('postsSports',postsSportsData);
 buildTrack('postsDesign',postsDesignData);
 addHover('.psc');
 
+// Duplicate brand identity cards for seamless carousel loop
+(function(){
+  const t=document.getElementById('idTrack');
+  if(!t)return;
+  [...t.children].forEach(c=>t.appendChild(c.cloneNode(true)));
+})();
+
 // ── Brand PDF viewer ─────────────────────────────────────────────────────
 function openPDF(url,title){
   vmContent.innerHTML=`<div style="display:flex;flex-direction:column;gap:1rem;width:min(90vw,1000px);height:85vh">
@@ -920,6 +951,21 @@ function openPDF(url,title){
   vmodal.classList.add('open');
   document.body.style.overflow='hidden';
 }
+
+// ── 3D icon mouse parallax ────────────────────────────────────────────────
+let icTX=0,icTY=0,icX=0,icY=0;
+document.addEventListener('mousemove',e=>{
+  icTX=(e.clientX/innerWidth-.5)*28;
+  icTY=(e.clientY/innerHeight-.5)*28;
+},{passive:true});
+(function icl(){
+  icX+=(icTX-icX)*.07;icY+=(icTY-icY)*.07;
+  document.querySelectorAll('.icon3d').forEach((el,i)=>{
+    const d=.4+(i%5)*.14;
+    el.style.transform=`translate(${icX*d}px,${icY*d}px)`;
+  });
+  requestAnimationFrame(icl);
+})();
 
 // ── Reveal on scroll — runs AFTER all dynamic content is in DOM ──────────
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.05,rootMargin:'0px 0px -20px 0px'});
