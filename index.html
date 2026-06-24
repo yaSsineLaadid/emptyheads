@@ -42,16 +42,16 @@ body::after{content:'';position:fixed;inset:0;z-index:9000;pointer-events:none;o
 @keyframes lf{to{opacity:1}}@keyframes ll{to{left:0}}
 
 /* ─ NAV ─ */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2.5rem;height:54px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:background .4s,border-color .4s}
-nav.stk{background:rgba(0,0,0,.93);backdrop-filter:blur(16px);border-bottom-color:var(--brd)}
-.nlogo{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:#fff}
-.nlogo-img{height:52px;width:auto;display:block;object-fit:contain}
-.nbadge{width:28px;height:28px;border:1px solid var(--stone);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.42rem;font-weight:700;letter-spacing:.05em;color:var(--stone)}
-.nwm{font-family:var(--fd);font-size:1.1rem;letter-spacing:.2em}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2.5rem;height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:background .4s,border-color .4s}
+nav.stk{background:rgba(0,0,0,.95);backdrop-filter:blur(18px);border-bottom-color:var(--brd)}
+.nlogo{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:#fff}
+.nlogo-img{height:68px;width:auto;display:block;object-fit:contain}
+.nbadge{width:32px;height:32px;border:1px solid var(--stone);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.5rem;font-weight:700;letter-spacing:.05em;color:var(--stone)}
+.nwm{font-family:var(--fd);font-size:1.5rem;letter-spacing:.2em}
 .nlinks{display:flex;align-items:center;list-style:none}
-.nlinks a{font-family:var(--fm);font-size:.48rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--fg2);text-decoration:none;padding:.35rem .8rem;transition:color .25s;white-space:nowrap}
+.nlinks a{font-family:var(--fm);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--fg2);text-decoration:none;padding:.4rem .9rem;transition:color .25s;white-space:nowrap}
 .nlinks a:hover{color:#fff}
-.ncta{font-family:var(--fm);font-size:.48rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--brd2);color:var(--fg);padding:.38rem 1.1rem;text-decoration:none;transition:border-color .3s,background .3s,color .3s;white-space:nowrap;margin-left:.5rem}
+.ncta{font-family:var(--fm);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--brd2);color:var(--fg);padding:.44rem 1.3rem;text-decoration:none;transition:border-color .3s,background .3s,color .3s;white-space:nowrap;margin-left:.6rem}
 .ncta:hover{border-color:#fff;background:#fff;color:#000}
 
 /* ─ HERO ─ */
@@ -263,21 +263,36 @@ section{padding:6.5rem 2.5rem}
 @keyframes psroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ─ ARTS ─ */
-#arts{background:#09060a;border-top:4px solid var(--retro-r);padding:6.5rem 2.5rem}
-#arts .shd{margin-bottom:3rem}
-.arts-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:var(--brd)}
-.art-card{position:relative;overflow:hidden;background:var(--bg);cursor:pointer}
-/* Layout: row 1 = 3 equal portrait cards; row 2 = 2 wide landscape cards */
-.art-card:nth-child(1),.art-card:nth-child(2),.art-card:nth-child(3){grid-column:span 2}
-.art-card:nth-child(4),.art-card:nth-child(5){grid-column:span 3}
-.art-vis{overflow:hidden;position:relative;aspect-ratio:2/3}
+#arts{background:#09060a;border-top:4px solid var(--retro-r);padding:6.5rem 0}
+#arts .shd{padding:0 2.5rem;margin-bottom:3rem}
+.arts-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--brd)}
+.art-card{position:relative;background:var(--bg);cursor:pointer;overflow:hidden;display:flex;flex-direction:column}
+.art-card:nth-child(1),.art-card:nth-child(2),.art-card:nth-child(3){grid-column:span 4}
+.art-card:nth-child(4),.art-card:nth-child(5){grid-column:span 6}
+.art-card:nth-child(6){grid-column:span 12}
+.art-vis{overflow:hidden;position:relative;aspect-ratio:3/4;flex-shrink:0}
 .art-card:nth-child(4) .art-vis,.art-card:nth-child(5) .art-vis{aspect-ratio:16/9}
-.art-vis img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s var(--ease)}
-.art-card:hover .art-vis img{transform:scale(1.06)}
-/* gallery number */
-.art-num{position:absolute;top:.75rem;left:.85rem;font-family:var(--fd);font-size:.95rem;letter-spacing:.04em;z-index:3;opacity:.5;transition:opacity .3s}
-.art-card:hover .art-num{opacity:1}
-/* clip-path reveal on scroll */
+.art-card:nth-child(6) .art-vis{aspect-ratio:21/9;position:relative}
+.art-vis img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
+.art-card:hover .art-vis img{transform:scale(1.05)}
+.art-info{padding:1.5rem 1.7rem 1.8rem;border-top:1px solid var(--brd);flex:1}
+.art-idx{font-family:var(--fm);font-size:.4rem;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:.55rem}
+.art-ttl{font-family:var(--fd);font-size:clamp(1.8rem,2.8vw,2.6rem);letter-spacing:.04em;color:#fff;line-height:.88;margin-bottom:.6rem}
+.art-med{font-family:var(--fm);font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg3);padding-bottom:.7rem;margin-bottom:.7rem;border-bottom:1px solid var(--brd)}
+.art-desc{font-family:var(--fm);font-size:.49rem;line-height:2.15;color:var(--fg2)}
+.art-card:nth-child(1){border-top:3px solid var(--acid)}
+.art-card:nth-child(2){border-top:3px solid var(--retro-r)}
+.art-card:nth-child(3){border-top:3px solid var(--retro-c)}
+.art-card:nth-child(4){border-top:3px solid var(--stone)}
+.art-card:nth-child(5){border-top:3px solid var(--acid)}
+.art-card:nth-child(6){border-top:3px solid var(--retro-r)}
+.art-card::after{content:'';position:absolute;inset:0;border:2px solid transparent;pointer-events:none;transition:border-color .35s;z-index:4}
+.art-card:nth-child(1):hover::after{border-color:var(--acid)}
+.art-card:nth-child(2):hover::after{border-color:var(--retro-r)}
+.art-card:nth-child(3):hover::after{border-color:var(--retro-c)}
+.art-card:nth-child(4):hover::after{border-color:var(--stone)}
+.art-card:nth-child(5):hover::after{border-color:var(--acid)}
+.art-card:nth-child(6):hover::after{border-color:var(--retro-r)}
 .arts-grid .art-card{clip-path:inset(102% 0 0 0);transition:clip-path 1s cubic-bezier(.16,1,.3,1)}
 .arts-grid.on .art-card{clip-path:inset(0% 0 0 0)}
 .arts-grid.on .art-card:nth-child(1){transition-delay:.05s}
@@ -285,22 +300,11 @@ section{padding:6.5rem 2.5rem}
 .arts-grid.on .art-card:nth-child(3){transition-delay:.29s}
 .arts-grid.on .art-card:nth-child(4){transition-delay:.41s}
 .arts-grid.on .art-card:nth-child(5){transition-delay:.53s}
-/* retro color border on hover, cycling */
-.art-card::after{content:'';position:absolute;inset:0;border:2px solid transparent;pointer-events:none;transition:border-color .35s;z-index:4}
-.art-card:nth-child(1)::after,.art-card:nth-child(4)::after{border-color:transparent}
-.art-card:nth-child(1):hover::after{border-color:var(--acid)}
-.art-card:nth-child(2):hover::after{border-color:var(--retro-r)}
-.art-card:nth-child(3):hover::after{border-color:var(--retro-c)}
-.art-card:nth-child(4):hover::after{border-color:var(--acid)}
-.art-card:nth-child(5):hover::after{border-color:var(--retro-r)}
-/* overlay */
-.art-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0,rgba(0,0,0,.1) 55%,transparent 100%);display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:.35rem;padding:1rem;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s;z-index:2}
-.art-card:hover .art-ov{opacity:1;transform:none}
-.art-ov-title{font-family:var(--fd);font-size:1.4rem;letter-spacing:.06em;color:#fff;line-height:.95}
-.art-ov-type{font-family:var(--fm);font-size:.4rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
-.art-bar{padding:.7rem .9rem;border-top:1px solid var(--brd);display:flex;justify-content:space-between;align-items:center;background:var(--bg)}
-.art-name{font-family:var(--fm);font-size:.44rem;color:#fff}
-.art-tp{font-family:var(--fm);font-size:.38rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.arts-grid.on .art-card:nth-child(6){transition-delay:.65s}
+.art-soon{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:linear-gradient(135deg,#0a0a14 0%,#131326 60%,#0c0c0c 100%)}
+.art-soon-tag{font-family:var(--fm);font-size:.44rem;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.24rem .75rem}
+.art-soon-ttl{font-family:var(--fd);font-size:clamp(3rem,6vw,6rem);letter-spacing:.08em;color:#fff;text-align:center;line-height:.88}
+.art-soon-sub{font-family:var(--fm);font-size:.46rem;letter-spacing:.16em;text-transform:uppercase;color:var(--fg3)}
 
 /* ─ WEBSITES ─ */
 #websites{background:var(--bg)}
@@ -550,25 +554,22 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   <div class="idwrap"><div class="idtrack" id="idTrack">
     <div class="bc" onclick="openPDF('./assetes/images/brands/fc morokko herne_compressed.pdf','FC MOROKKO HERNE')">
       <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="bc-vis" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem">
-        <svg viewBox="0 0 200 200" width="120" height="120" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="90" fill="none" stroke="rgba(184,168,152,.2)" stroke-width="1"/><circle cx="100" cy="100" r="60" fill="none" stroke="rgba(184,168,152,.3)" stroke-width="1"/><text x="100" y="108" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="20" fill="rgba(255,255,255,.85)" letter-spacing="2">FCM</text></svg>
-        <span style="font-family:var(--fm);font-size:.38rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.2rem .6rem">VIEW PDF ↗</span>
+      <div class="bc-vis">
+        <iframe src="./assetes/images/brands/fc morokko herne_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none" loading="lazy"></iframe>
       </div>
       <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">FC MOROKKO HERNE</div><div class="bc-desc">Football Club — Logo, Kit, Visual System</div></div>
     </div>
     <div class="bc" onclick="openPDF('./assetes/images/brands/l avenue 19_compressed.pdf','L\'AVENUE 19')">
       <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="bc-vis" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem">
-        <svg viewBox="0 0 200 200" width="120" height="120" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="80" width="160" height="40" fill="none" stroke="rgba(184,168,152,.25)" stroke-width="1"/><text x="100" y="104" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="16" fill="rgba(255,255,255,.85)" letter-spacing="3">L'AVENUE</text><rect x="60" y="130" width="80" height="1" fill="rgba(198,241,53,.5)"/></svg>
-        <span style="font-family:var(--fm);font-size:.38rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.2rem .6rem">VIEW PDF ↗</span>
+      <div class="bc-vis">
+        <iframe src="./assetes/images/brands/l avenue 19_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none" loading="lazy"></iframe>
       </div>
       <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">L'AVENUE 19</div><div class="bc-desc">Luxury Venue — Branding, Signage, Typography</div></div>
     </div>
     <div class="bc" onclick="openPDF('./assetes/images/brands/olampic dchira_compressed.pdf','OLYMPIC DCHIRA')">
       <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="bc-vis" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem">
-        <svg viewBox="0 0 200 200" width="120" height="120" xmlns="http://www.w3.org/2000/svg"><polygon points="100,20 180,80 155,170 45,170 20,80" fill="none" stroke="rgba(224,64,48,.6)" stroke-width="1.5"/><text x="100" y="104" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="14" fill="rgba(255,255,255,.85)" letter-spacing="2">OLYMPIC</text></svg>
-        <span style="font-family:var(--fm);font-size:.38rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.2rem .6rem">VIEW PDF ↗</span>
+      <div class="bc-vis">
+        <iframe src="./assetes/images/brands/olampic dchira_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none" loading="lazy"></iframe>
       </div>
       <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">OLYMPIC DCHIRA</div><div class="bc-desc">Sports Club — Full Visual Identity, Colours, Logo System</div></div>
     </div>
@@ -622,34 +623,64 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   </div>
   <div class="arts-grid rv">
     <div class="art-card">
-      <div class="art-num">NO.01</div>
-      <div class="art-vis"><img src="./assetes/images/arts/art-1.png" alt="Looney Tach"></div>
-      <div class="art-ov"><div class="art-ov-title">LOONEY TACH!</div><div class="art-ov-type">Pop Art · Acrylic on Canvas</div></div>
-      <div class="art-bar"><span class="art-name">Looney Tach!</span><span class="art-tp">Painting</span></div>
+      <div class="art-vis"><img src="./assetes/images/arts/art-1.png" alt="Looney Tach" loading="lazy"></div>
+      <div class="art-info">
+        <div class="art-idx">NO.01 — POP ART</div>
+        <div class="art-ttl">LOONEY<br>TACH!</div>
+        <div class="art-med">Acrylic on Canvas · 2024</div>
+        <div class="art-desc">Pop culture collision. Looney Tunes refracted through Moroccan street art — every line explosive, every colour deliberate. The cartoon becomes the canvas.</div>
+      </div>
     </div>
     <div class="art-card">
-      <div class="art-num">NO.02</div>
-      <div class="art-vis"><img src="./assetes/images/arts/scarface.png" alt="Scarface"></div>
-      <div class="art-ov"><div class="art-ov-title">SCARFACE</div><div class="art-ov-type">Portrait · Oil on Canvas</div></div>
-      <div class="art-bar"><span class="art-name">Scarface</span><span class="art-tp">Portrait</span></div>
+      <div class="art-vis"><img src="./assetes/images/arts/scarface.png" alt="Scarface" loading="lazy"></div>
+      <div class="art-info">
+        <div class="art-idx">NO.02 — PORTRAIT</div>
+        <div class="art-ttl">SCAR<br>FACE</div>
+        <div class="art-med">Oil on Canvas · 2024</div>
+        <div class="art-desc">A portrait that commands the room. Al Pacino's most notorious frame rebuilt stroke by stroke — raw power, menace, and respect locked onto canvas.</div>
+      </div>
     </div>
     <div class="art-card">
-      <div class="art-num">NO.03</div>
-      <div class="art-vis"><img src="./assetes/images/arts/art-2.jpg" alt="Scrooge"></div>
-      <div class="art-ov"><div class="art-ov-title">SCROOGE</div><div class="art-ov-type">Pop Art · Acrylic on Canvas</div></div>
-      <div class="art-bar"><span class="art-name">Scrooge</span><span class="art-tp">Painting</span></div>
+      <div class="art-vis"><img src="./assetes/images/arts/tab-01.png" alt="Zeus Reloaded" loading="lazy"></div>
+      <div class="art-info">
+        <div class="art-idx">NO.03 — GRAFFITI</div>
+        <div class="art-ttl">ZEUS<br>RELOADED</div>
+        <div class="art-med">Graffiti × Fine Art · 2024</div>
+        <div class="art-desc">Ancient mythology reborn through a street lens. Zeus as pure creative energy — graffiti discipline meets fine-art fresco in one volatile composition.</div>
+      </div>
     </div>
     <div class="art-card">
-      <div class="art-num">NO.04</div>
-      <div class="art-vis"><img src="./assetes/images/arts/art-3.jpg" alt="Sylvester x LV"></div>
-      <div class="art-ov"><div class="art-ov-title">SYLVESTER × LV</div><div class="art-ov-type">Mixed Media · Fashion Art</div></div>
-      <div class="art-bar"><span class="art-name">Sylvester × LV</span><span class="art-tp">Mixed Media</span></div>
+      <div class="art-vis"><img src="./assetes/images/arts/art-2.jpg" alt="Scrooge" loading="lazy"></div>
+      <div class="art-info">
+        <div class="art-idx">NO.04 — POP ART</div>
+        <div class="art-ttl">SCROOGE</div>
+        <div class="art-med">Acrylic on Canvas · 2024</div>
+        <div class="art-desc">The miser stripped bare and rebuilt in urban colour. Victorian greed dressed in street-art bravado — contradiction as pure aesthetic statement.</div>
+      </div>
     </div>
     <div class="art-card">
-      <div class="art-num">NO.05</div>
-      <div class="art-vis"><img src="./assetes/images/arts/tab-01.png" alt="Zeus Reloaded"></div>
-      <div class="art-ov"><div class="art-ov-title">ZEUS RELOADED</div><div class="art-ov-type">Graffiti × Fine Art</div></div>
-      <div class="art-bar"><span class="art-name">Zeus Reloaded</span><span class="art-tp">Graffiti Art</span></div>
+      <div class="art-vis"><img src="./assetes/images/arts/art-3.jpg" alt="Sylvester × LV" loading="lazy"></div>
+      <div class="art-info">
+        <div class="art-idx">NO.05 — MIXED MEDIA</div>
+        <div class="art-ttl">SYLVESTER<br>× LV</div>
+        <div class="art-med">Mixed Media · Fashion Art · 2024</div>
+        <div class="art-desc">When fashion meets cartoons. Sylvester draped in Louis Vuitton monogram — high-low culture in deliberate, beautiful collision. Luxury is the joke. Art is the punchline.</div>
+      </div>
+    </div>
+    <div class="art-card">
+      <div class="art-vis">
+        <div class="art-soon">
+          <div class="art-soon-tag">Coming Soon</div>
+          <div class="art-soon-ttl">ATLAS<br>COLLECTIVE</div>
+          <div class="art-soon-sub">Full Case Study — Dropping Soon</div>
+        </div>
+      </div>
+      <div class="art-info">
+        <div class="art-idx">NO.06 — BRAND ART</div>
+        <div class="art-ttl">ATLAS COLLECTIVE</div>
+        <div class="art-med">Visual Identity · Branding · 2024</div>
+        <div class="art-desc">A complete visual world built for a collective. Logos, colour systems, type hierarchy and brand guidelines — all designed to move with the culture and outlast the trend.</div>
+      </div>
     </div>
   </div>
 </section>
