@@ -549,9 +549,9 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     <p class="ssub" style="padding-right:2.5rem">Social media reels, brand films, live events and festival coverage.</p>
   </div>
   <div class="vlabel rv">Shows &amp; Festivals</div>
-  <div class="shows-grid rv" id="showsGrid"></div>
+  <div class="shows-grid" id="showsGrid"></div>
   <div class="vlabel rv" style="margin-top:2.5rem">Social Media Reels</div>
-  <div class="vrwrap rv"><div class="vrtrack" id="reelsTrack"></div></div>
+  <div class="vrwrap"><div class="vrtrack" id="reelsTrack"></div></div>
 </section>
 
 <!-- MUSIC COVERS -->
@@ -570,11 +570,11 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     <p class="ssub" style="padding-right:2.5rem">Feed posts, stories, campaigns. Content that stops the scroll.</p>
   </div>
   <div class="vlabel rv">Luxury &amp; Hospitality</div>
-  <div class="pswrap rv"><div class="pstrack" id="postsLuxury" style="animation-duration:48s"></div></div>
+  <div class="pswrap"><div class="pstrack" id="postsLuxury" style="animation-duration:48s"></div></div>
   <div class="vlabel rv" style="margin-top:2rem">Sports</div>
-  <div class="pswrap rv"><div class="pstrack" id="postsSports" style="animation-duration:28s;animation-direction:normal"></div></div>
-  <div class="vlabel rv" style="margin-top:2rem">Photography &amp; Design</div>
-  <div class="pswrap rv"><div class="pstrack" id="postsDesign" style="animation-duration:90s"></div></div>
+  <div class="pswrap"><div class="pstrack" id="postsSports" style="animation-duration:28s;animation-direction:normal"></div></div>
+  <div class="vlabel rv" style="margin-top:2rem">Photoshooting</div>
+  <div class="pswrap"><div class="pstrack" id="postsDesign" style="animation-duration:90s"></div></div>
 </section>
 
 <!-- ARTS -->
@@ -696,10 +696,6 @@ window.addEventListener('load',()=>setTimeout(()=>document.getElementById('ldr')
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('stk',scrollY>50),{passive:true});
 
-// ── Reveal ───────────────────────────────────────────────────────────────
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.07,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-
 // ── Video path helper ────────────────────────────────────────────────────
 const VBASE='./assetes/videos/';
 function vs(f){return VBASE+encodeURIComponent(f);}
@@ -754,7 +750,7 @@ const reelsData=[
 function mkReelCard(d){
   const div=document.createElement('div');div.className='vr';
   div.innerHTML=`<div class="vr-thumb">
-    <video src="${vs(d.f)}" muted loop playsinline preload="metadata" autoplay></video>
+    <video src="${vs(d.f)}" muted loop playsinline preload="none"></video>
     <div class="vr-cat">${d.cat}</div>
     <div class="vr-play"><div class="vr-pb"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12" fill="white"/></svg></div></div>
   </div>
@@ -861,7 +857,7 @@ const postsSportsData=[
   {w:'sq',img:pi('📸 Some shots from Today victory against JSS🔴 ⚪️#BotolaProInwi #HusavsJss (2).jpg'),lbl:'HUSA vs JSS',tp:'Post'},
   {w:'sq',img:pi('📸 Some shots from Today victory against JSS🔴 ⚪️#BotolaProInwi #HusavsJss (3).jpg'),lbl:'HUSA vs JSS',tp:'Post'},
 ];
-// Photography & Design
+// Photoshooting
 const postsDesignData=[
   {w:'sq',img:pi('GHA ZID.png'),lbl:'GHA ZID',tp:'Post'},
   {w:'sq',img:pi('1.png'),lbl:'Design',tp:'Post'},{w:'sq',img:pi('2.png'),lbl:'Design',tp:'Post'},
@@ -888,6 +884,10 @@ buildTrack('postsLuxury',postsLuxuryData);
 buildTrack('postsSports',postsSportsData);
 buildTrack('postsDesign',postsDesignData);
 addHover('.psc');
+
+// ── Reveal on scroll — runs AFTER all dynamic content is in DOM ──────────
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.05,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
 </script>
 </body>
