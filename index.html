@@ -42,12 +42,12 @@ body::after{content:'';position:fixed;inset:0;z-index:9000;pointer-events:none;o
 @keyframes lf{to{opacity:1}}@keyframes ll{to{left:0}}
 
 /* ─ NAV ─ */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2.5rem;height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:background .4s,border-color .4s}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2.5rem;height:90px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:background .4s,border-color .4s}
 nav.stk{background:rgba(0,0,0,.95);backdrop-filter:blur(18px);border-bottom-color:var(--brd)}
 .nlogo{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:#fff}
-.nlogo-img{height:68px;width:auto;display:block;object-fit:contain}
+.nlogo-img{height:82px;width:auto;display:block;object-fit:contain}
 .nbadge{width:32px;height:32px;border:1px solid var(--stone);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.5rem;font-weight:700;letter-spacing:.05em;color:var(--stone)}
-.nwm{font-family:var(--fd);font-size:1.5rem;letter-spacing:.2em}
+.nwm{font-family:var(--fd);font-size:1.9rem;letter-spacing:.2em}
 .nlinks{display:flex;align-items:center;list-style:none}
 .nlinks a{font-family:var(--fm);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--fg2);text-decoration:none;padding:.4rem .9rem;transition:color .25s;white-space:nowrap}
 .nlinks a:hover{color:#fff}
@@ -124,10 +124,10 @@ section{padding:6.5rem 2.5rem}
 /* ─ IDENTITY ─ */
 #identity{background:var(--bg2);padding-bottom:5rem}
 .idwrap{overflow:hidden;width:100%}
-.idtrack{display:flex;gap:2px;animation:idroll 22s linear infinite;width:max-content}
+.idtrack{display:flex;animation:idroll 22s linear infinite;width:max-content}
 .idtrack:hover{animation-play-state:paused}
 @keyframes idroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.bc{flex-shrink:0;width:420px;position:relative;overflow:hidden;background:var(--bg);transition:outline .3s;cursor:pointer;outline:1px solid transparent}
+.bc{flex-shrink:0;width:420px;margin-right:2px;position:relative;overflow:hidden;background:var(--bg);transition:outline .3s;cursor:pointer;outline:1px solid transparent}
 .bc:hover{outline-color:var(--stone);z-index:2}
 
 .bc-vis{height:380px;overflow:hidden;position:relative;background:var(--bg3)}
@@ -191,9 +191,9 @@ section{padding:6.5rem 2.5rem}
 
 /* Portrait reels track */
 .vrwrap{overflow:hidden;width:100%;margin-top:1.4rem}
-.vrtrack{display:flex;gap:1rem;animation:vrroll 42s linear infinite}
+.vrtrack{display:flex;animation:vrroll 42s linear infinite}
 .vrtrack:hover{animation-play-state:paused}
-.vr{flex-shrink:0;width:152px;cursor:pointer}
+.vr{flex-shrink:0;width:152px;margin-right:1rem;cursor:pointer}
 .vr-thumb{position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--bg3);border:1px solid var(--brd)}
 .vr-thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vr-cat{position:absolute;top:.5rem;left:.5rem;font-family:var(--fm);font-size:.38rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#000;color:var(--stone);padding:.15rem .38rem;z-index:2}
@@ -218,9 +218,9 @@ section{padding:6.5rem 2.5rem}
 #music{background:#030406;padding:6.5rem 0 6.5rem 2.5rem;border-top:4px solid var(--acid)}
 .mc-hd{padding-right:2.5rem;margin-bottom:3rem}
 .mcwrap{overflow:hidden;width:100%}
-.mctrack{display:flex;gap:2px;animation:mcroll 36s linear infinite;background:transparent}
+.mctrack{display:flex;animation:mcroll 36s linear infinite;background:transparent}
 .mctrack:hover{animation-play-state:paused}
-.mcc{flex-shrink:0;width:280px;cursor:pointer;position:relative;background:var(--bg);transition:transform .35s var(--ease)}
+.mcc{flex-shrink:0;width:280px;margin-right:2px;cursor:pointer;position:relative;background:var(--bg);transition:transform .35s var(--ease)}
 .mcc:hover{transform:translateY(-5px)}
 .mcc:nth-child(6n+1){border-top:3px solid var(--acid)}
 .mcc:nth-child(6n+2){border-top:3px solid var(--retro-r)}
@@ -244,9 +244,9 @@ section{padding:6.5rem 2.5rem}
 #posts{background:#05080f;padding:6.5rem 0 6.5rem 2.5rem;border-top:4px solid #2a3a60}
 .posts-hd{padding-right:2.5rem;margin-bottom:3rem}
 .pswrap{overflow:hidden;width:100%}
-.pstrack{display:flex;gap:1px;animation:psroll 120s linear infinite reverse;background:var(--brd)}
+.pstrack{display:flex;animation:psroll 120s linear infinite reverse}
 .pstrack:hover{animation-play-state:paused}
-.psc{flex-shrink:0;cursor:pointer;background:var(--bg2);position:relative}
+.psc{flex-shrink:0;cursor:pointer;background:var(--bg2);position:relative;margin-right:1px}
 .psc.sq{width:200px}
 .psc.st{width:130px}
 .psc-vis{overflow:hidden;background:var(--bg3);position:relative}
@@ -266,45 +266,56 @@ section{padding:6.5rem 2.5rem}
 #arts{background:#09060a;border-top:4px solid var(--retro-r);padding:6.5rem 0}
 #arts .shd{padding:0 2.5rem;margin-bottom:3rem}
 .arts-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:var(--brd)}
-.art-card{position:relative;background:var(--bg);cursor:pointer;overflow:hidden;display:flex;flex-direction:column}
-.art-card:nth-child(1),.art-card:nth-child(2),.art-card:nth-child(3){grid-column:span 4}
-.art-card:nth-child(4),.art-card:nth-child(5){grid-column:span 6}
-.art-card:nth-child(6){grid-column:span 12}
-.art-vis{overflow:hidden;position:relative;aspect-ratio:3/4;flex-shrink:0}
-.art-card:nth-child(4) .art-vis,.art-card:nth-child(5) .art-vis{aspect-ratio:16/9}
-.art-card:nth-child(6) .art-vis{aspect-ratio:21/9;position:relative}
-.art-vis img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease)}
-.art-card:hover .art-vis img{transform:scale(1.05)}
-.art-info{padding:1.5rem 1.7rem 1.8rem;border-top:1px solid var(--brd);flex:1}
-.art-idx{font-family:var(--fm);font-size:.4rem;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:.55rem}
-.art-ttl{font-family:var(--fd);font-size:clamp(1.8rem,2.8vw,2.6rem);letter-spacing:.04em;color:#fff;line-height:.88;margin-bottom:.6rem}
-.art-med{font-family:var(--fm);font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg3);padding-bottom:.7rem;margin-bottom:.7rem;border-bottom:1px solid var(--brd)}
-.art-desc{font-family:var(--fm);font-size:.49rem;line-height:2.15;color:var(--fg2)}
+.art-card{position:relative;background:var(--bg3);cursor:pointer;overflow:hidden}
+.art-card:nth-child(1),.art-card:nth-child(2),.art-card:nth-child(3){grid-column:span 4;aspect-ratio:3/4}
+.art-card:nth-child(4),.art-card:nth-child(5){grid-column:span 6;aspect-ratio:4/3}
+.art-card:nth-child(6){grid-column:span 12;aspect-ratio:21/9}
+/* full-bleed image */
+.art-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.5s var(--ease)}
+.art-card:hover .art-img{transform:scale(1.07)}
+/* second image for split layouts */
+.art-img-r{position:absolute;top:0;right:0;width:50%;height:100%;object-fit:cover;display:none;transition:transform 1.5s var(--ease)}
+.art-card:nth-child(6) .art-img{width:50%}
+.art-card:nth-child(6) .art-img-r{display:block}
+.art-card:nth-child(6):hover .art-img-r{transform:scale(1.07)}
+/* always-visible text overlay */
+.art-lay{position:absolute;bottom:0;left:0;right:0;padding:2rem 1.8rem 1.6rem;background:linear-gradient(to top,rgba(0,0,0,.97) 0%,rgba(0,0,0,.82) 40%,rgba(0,0,0,.3) 75%,transparent 100%);z-index:2;transition:padding .4s var(--ease)}
+.art-card:nth-child(6) .art-lay{right:50%;background:linear-gradient(to right,rgba(0,0,0,.98) 0%,rgba(0,0,0,.88) 55%,transparent 100%);padding:2.5rem 2.8rem;top:0;display:flex;flex-direction:column;justify-content:center}
+.art-card:hover .art-lay{padding-bottom:2rem}
+.art-num{position:absolute;top:.9rem;left:1rem;font-family:var(--fd);font-size:1.8rem;letter-spacing:.06em;color:rgba(255,255,255,.18);z-index:3;line-height:1;transition:color .35s}
+.art-card:hover .art-num{color:rgba(255,255,255,.4)}
+.art-tag-line{font-family:var(--fm);font-size:.4rem;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:.5rem;display:flex;align-items:center;gap:.65rem}
+.art-tag-line::before{content:'';flex-shrink:0;width:16px;height:1px;background:var(--stone)}
+.art-ttl{font-family:var(--fd);font-size:clamp(1.8rem,2.8vw,2.8rem);letter-spacing:.03em;color:#fff;line-height:.88;margin-bottom:.65rem}
+.art-card:nth-child(6) .art-ttl{font-size:clamp(2.6rem,4vw,4.5rem)}
+.art-desc{font-family:var(--fm);font-size:.47rem;line-height:2.1;color:rgba(255,255,255,.58);transition:color .35s}
+.art-card:hover .art-desc{color:rgba(255,255,255,.82)}
+/* accent border top */
 .art-card:nth-child(1){border-top:3px solid var(--acid)}
 .art-card:nth-child(2){border-top:3px solid var(--retro-r)}
 .art-card:nth-child(3){border-top:3px solid var(--retro-c)}
 .art-card:nth-child(4){border-top:3px solid var(--stone)}
 .art-card:nth-child(5){border-top:3px solid var(--acid)}
 .art-card:nth-child(6){border-top:3px solid var(--retro-r)}
-.art-card::after{content:'';position:absolute;inset:0;border:2px solid transparent;pointer-events:none;transition:border-color .35s;z-index:4}
-.art-card:nth-child(1):hover::after{border-color:var(--acid)}
-.art-card:nth-child(2):hover::after{border-color:var(--retro-r)}
-.art-card:nth-child(3):hover::after{border-color:var(--retro-c)}
-.art-card:nth-child(4):hover::after{border-color:var(--stone)}
-.art-card:nth-child(5):hover::after{border-color:var(--acid)}
-.art-card:nth-child(6):hover::after{border-color:var(--retro-r)}
+/* inset glow on hover */
+.art-card::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 2px transparent;pointer-events:none;transition:box-shadow .4s;z-index:5}
+.art-card:nth-child(1):hover::after{box-shadow:inset 0 0 0 2px var(--acid)}
+.art-card:nth-child(2):hover::after{box-shadow:inset 0 0 0 2px var(--retro-r)}
+.art-card:nth-child(3):hover::after{box-shadow:inset 0 0 0 2px var(--retro-c)}
+.art-card:nth-child(4):hover::after{box-shadow:inset 0 0 0 2px var(--stone)}
+.art-card:nth-child(5):hover::after{box-shadow:inset 0 0 0 2px var(--acid)}
+.art-card:nth-child(6):hover::after{box-shadow:inset 0 0 0 2px var(--retro-r)}
+/* wipe-up reveal */
 .arts-grid .art-card{clip-path:inset(102% 0 0 0);transition:clip-path 1s cubic-bezier(.16,1,.3,1)}
 .arts-grid.on .art-card{clip-path:inset(0% 0 0 0)}
 .arts-grid.on .art-card:nth-child(1){transition-delay:.05s}
-.arts-grid.on .art-card:nth-child(2){transition-delay:.17s}
-.arts-grid.on .art-card:nth-child(3){transition-delay:.29s}
-.arts-grid.on .art-card:nth-child(4){transition-delay:.41s}
-.arts-grid.on .art-card:nth-child(5){transition-delay:.53s}
-.arts-grid.on .art-card:nth-child(6){transition-delay:.65s}
-.art-soon{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;background:linear-gradient(135deg,#0a0a14 0%,#131326 60%,#0c0c0c 100%)}
-.art-soon-tag{font-family:var(--fm);font-size:.44rem;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.24rem .75rem}
-.art-soon-ttl{font-family:var(--fd);font-size:clamp(3rem,6vw,6rem);letter-spacing:.08em;color:#fff;text-align:center;line-height:.88}
-.art-soon-sub{font-family:var(--fm);font-size:.46rem;letter-spacing:.16em;text-transform:uppercase;color:var(--fg3)}
+.arts-grid.on .art-card:nth-child(2){transition-delay:.18s}
+.arts-grid.on .art-card:nth-child(3){transition-delay:.31s}
+.arts-grid.on .art-card:nth-child(4){transition-delay:.44s}
+.arts-grid.on .art-card:nth-child(5){transition-delay:.57s}
+.arts-grid.on .art-card:nth-child(6){transition-delay:.70s}
+/* divider in atlas split */
+.art-divider{position:absolute;top:0;left:50%;width:1px;height:100%;background:var(--brd);z-index:3}
 
 /* ─ WEBSITES ─ */
 #websites{background:var(--bg)}
@@ -555,21 +566,21 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     <div class="bc" onclick="openPDF('./assetes/images/brands/fc morokko herne_compressed.pdf','FC MOROKKO HERNE')">
       <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="bc-vis">
-        <iframe src="./assetes/images/brands/fc morokko herne_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none" loading="lazy"></iframe>
+        <iframe src="./assetes/images/brands/fc morokko herne_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none"></iframe>
       </div>
       <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">FC MOROKKO HERNE</div><div class="bc-desc">Football Club — Logo, Kit, Visual System</div></div>
     </div>
     <div class="bc" onclick="openPDF('./assetes/images/brands/l avenue 19_compressed.pdf','L\'AVENUE 19')">
       <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="bc-vis">
-        <iframe src="./assetes/images/brands/l avenue 19_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none" loading="lazy"></iframe>
+        <iframe src="./assetes/images/brands/l avenue 19_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none"></iframe>
       </div>
       <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">L'AVENUE 19</div><div class="bc-desc">Luxury Venue — Branding, Signage, Typography</div></div>
     </div>
     <div class="bc" onclick="openPDF('./assetes/images/brands/olampic dchira_compressed.pdf','OLYMPIC DCHIRA')">
       <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="bc-vis">
-        <iframe src="./assetes/images/brands/olampic dchira_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none" loading="lazy"></iframe>
+        <iframe src="./assetes/images/brands/olampic dchira_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none"></iframe>
       </div>
       <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">OLYMPIC DCHIRA</div><div class="bc-desc">Sports Club — Full Visual Identity, Colours, Logo System</div></div>
     </div>
@@ -623,63 +634,59 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   </div>
   <div class="arts-grid rv">
     <div class="art-card">
-      <div class="art-vis"><img src="./assetes/images/arts/art-1.png" alt="Looney Tach" loading="lazy"></div>
-      <div class="art-info">
-        <div class="art-idx">NO.01 — POP ART</div>
+      <img class="art-img" src="./assetes/images/arts/art-1.png" alt="Looney Tach" loading="lazy">
+      <div class="art-num">01</div>
+      <div class="art-lay">
+        <div class="art-tag-line">Pop Art · Acrylic on Canvas</div>
         <div class="art-ttl">LOONEY<br>TACH!</div>
-        <div class="art-med">Acrylic on Canvas · 2024</div>
         <div class="art-desc">Pop culture collision. Looney Tunes refracted through Moroccan street art — every line explosive, every colour deliberate. The cartoon becomes the canvas.</div>
       </div>
     </div>
     <div class="art-card">
-      <div class="art-vis"><img src="./assetes/images/arts/scarface.png" alt="Scarface" loading="lazy"></div>
-      <div class="art-info">
-        <div class="art-idx">NO.02 — PORTRAIT</div>
+      <img class="art-img" src="./assetes/images/arts/scarface.png" alt="Scarface" loading="lazy">
+      <div class="art-num">02</div>
+      <div class="art-lay">
+        <div class="art-tag-line">Portrait · Oil on Canvas</div>
         <div class="art-ttl">SCAR<br>FACE</div>
-        <div class="art-med">Oil on Canvas · 2024</div>
-        <div class="art-desc">A portrait that commands the room. Al Pacino's most notorious frame rebuilt stroke by stroke — raw power, menace, and respect locked onto canvas.</div>
+        <div class="art-desc">Al Pacino's most notorious frame rebuilt stroke by stroke. Raw power and menace locked onto canvas — a portrait that commands the room.</div>
       </div>
     </div>
     <div class="art-card">
-      <div class="art-vis"><img src="./assetes/images/arts/tab-01.png" alt="Zeus Reloaded" loading="lazy"></div>
-      <div class="art-info">
-        <div class="art-idx">NO.03 — GRAFFITI</div>
+      <img class="art-img" src="./assetes/images/arts/tab-01.png" alt="Zeus Reloaded" loading="lazy">
+      <div class="art-num">03</div>
+      <div class="art-lay">
+        <div class="art-tag-line">Graffiti × Fine Art</div>
         <div class="art-ttl">ZEUS<br>RELOADED</div>
-        <div class="art-med">Graffiti × Fine Art · 2024</div>
-        <div class="art-desc">Ancient mythology reborn through a street lens. Zeus as pure creative energy — graffiti discipline meets fine-art fresco in one volatile composition.</div>
+        <div class="art-desc">Ancient mythology reborn through a street lens. Graffiti discipline meets fine-art fresco in one volatile, electric composition.</div>
       </div>
     </div>
     <div class="art-card">
-      <div class="art-vis"><img src="./assetes/images/arts/art-2.jpg" alt="Scrooge" loading="lazy"></div>
-      <div class="art-info">
-        <div class="art-idx">NO.04 — POP ART</div>
+      <img class="art-img" src="./assetes/images/arts/art-2.jpg" alt="Scrooge" loading="lazy">
+      <div class="art-num">04</div>
+      <div class="art-lay">
+        <div class="art-tag-line">Pop Art · Acrylic on Canvas</div>
         <div class="art-ttl">SCROOGE</div>
-        <div class="art-med">Acrylic on Canvas · 2024</div>
         <div class="art-desc">The miser stripped bare and rebuilt in urban colour. Victorian greed dressed in street-art bravado — contradiction as pure aesthetic statement.</div>
       </div>
     </div>
     <div class="art-card">
-      <div class="art-vis"><img src="./assetes/images/arts/art-3.jpg" alt="Sylvester × LV" loading="lazy"></div>
-      <div class="art-info">
-        <div class="art-idx">NO.05 — MIXED MEDIA</div>
+      <img class="art-img" src="./assetes/images/arts/art-3.jpg" alt="Sylvester × LV" loading="lazy">
+      <div class="art-num">05</div>
+      <div class="art-lay">
+        <div class="art-tag-line">Mixed Media · Fashion Art</div>
         <div class="art-ttl">SYLVESTER<br>× LV</div>
-        <div class="art-med">Mixed Media · Fashion Art · 2024</div>
-        <div class="art-desc">When fashion meets cartoons. Sylvester draped in Louis Vuitton monogram — high-low culture in deliberate, beautiful collision. Luxury is the joke. Art is the punchline.</div>
+        <div class="art-desc">High-low culture in deliberate collision. Sylvester draped in Louis Vuitton monogram — luxury is the joke, art is the punchline.</div>
       </div>
     </div>
     <div class="art-card">
-      <div class="art-vis">
-        <div class="art-soon">
-          <div class="art-soon-tag">Coming Soon</div>
-          <div class="art-soon-ttl">ATLAS<br>COLLECTIVE</div>
-          <div class="art-soon-sub">Full Case Study — Dropping Soon</div>
-        </div>
-      </div>
-      <div class="art-info">
-        <div class="art-idx">NO.06 — BRAND ART</div>
-        <div class="art-ttl">ATLAS COLLECTIVE</div>
-        <div class="art-med">Visual Identity · Branding · 2024</div>
-        <div class="art-desc">A complete visual world built for a collective. Logos, colour systems, type hierarchy and brand guidelines — all designed to move with the culture and outlast the trend.</div>
+      <img class="art-img" src="./assetes/images/arts/atlas.jpg" alt="Atlas Collective" loading="lazy">
+      <img class="art-img-r" src="./assetes/images/arts/atlas%202.jpg" alt="Atlas Collective 2" loading="lazy">
+      <div class="art-divider"></div>
+      <div class="art-num">06</div>
+      <div class="art-lay">
+        <div class="art-tag-line">Visual Identity · Branding</div>
+        <div class="art-ttl">ATLAS<br>COLLECTIVE</div>
+        <div class="art-desc">A complete visual world built for a collective — logos, colour systems, type hierarchy, brand guidelines. Designed to move with the culture and outlast the trend.</div>
       </div>
     </div>
   </div>
@@ -793,7 +800,7 @@ showsData.forEach(s=>{
     <div class="sc-thumb" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:#030305">
       ${thumbInner}
       <div class="sc-cat" style="position:absolute;top:.7rem;left:.7rem;z-index:4;font-family:var(--fm);font-size:.42rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:#000;color:var(--stone);padding:.2rem .5rem">${s.cat}</div>
-      <div class="sc-play" style="z-index:5"><div class="sc-pb"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12" fill="white"/></svg></div></div>
+      ${s.yt?'<div class="sc-play" style="z-index:5"><div class="sc-pb"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12" fill="white"/></svg></div></div>':''}
     </div>
     <div class="sc-info"><div class="sc-tag">${s.cat}</div><div class="sc-title">${s.title}</div><div class="sc-meta"><span>${s.client}</span></div></div>`;
   if(s.yt){
