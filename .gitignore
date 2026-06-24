@@ -1,8 +1,9 @@
-# Videos too large for GitHub hosting
-assetes/videos/
+# Videos too large for GitHub (>100MB hard limit)
+assetes/videos/hilton.mp4
+assetes/videos/kenza normal colors.mp4
 
-# Unused brand PDF
-assetes/images/brands/
+# Old oversized brand PDF (the 3 compressed ones are fine)
+assetes/images/brands/png2pdf (3).pdf
 
 # OS junk
 .DS_Store

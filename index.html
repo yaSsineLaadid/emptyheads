@@ -534,11 +534,31 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     <div><div class="sn">Identity Work</div><h2 class="sttl">BRAND<br>IDENTITY</h2></div>
     <p class="ssub">Visual systems, logos and full brand guidelines built to last.</p>
   </div>
-  <div class="rv" style="transition-delay:.06s;border:1px solid var(--brd);padding:5rem 2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;text-align:center;background:var(--bg3)">
-    <div style="width:60px;height:60px;border:1px solid var(--brd2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.4rem;color:var(--stone)">EH</div>
-    <div style="font-family:var(--fd);font-size:clamp(2rem,5vw,4rem);color:var(--fg3);letter-spacing:.12em">CASE STUDIES COMING SOON</div>
-    <p style="font-family:var(--fm);font-size:.5rem;color:var(--fg3);letter-spacing:.1em;max-width:400px;line-height:2.1">Brand identity work is being curated here. Each project will include logo system, colour palette, typography, motion and full visual guidelines.</p>
-    <div style="width:80px;height:1px;background:var(--brd2)"></div>
+  <div class="idg">
+    <div class="bc rv" style="transition-delay:.04s" onclick="openPDF('./assetes/images/brands/fc morokko herne_compressed.pdf','FC MOROKKO HERNE')">
+      <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="bc-vis" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem">
+        <svg viewBox="0 0 200 200" width="120" height="120" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="90" fill="none" stroke="rgba(184,168,152,.2)" stroke-width="1"/><circle cx="100" cy="100" r="60" fill="none" stroke="rgba(184,168,152,.3)" stroke-width="1"/><text x="100" y="108" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="20" fill="rgba(255,255,255,.85)" letter-spacing="2">FCM</text></svg>
+        <span style="font-family:var(--fm);font-size:.38rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.2rem .6rem">VIEW PDF ↗</span>
+      </div>
+      <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">FC MOROKKO HERNE</div><div class="bc-desc">Football Club — Logo, Kit, Visual System</div></div>
+    </div>
+    <div class="bc rv" style="transition-delay:.08s" onclick="openPDF('./assetes/images/brands/l avenue 19_compressed.pdf','L\'AVENUE 19')">
+      <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="bc-vis" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem">
+        <svg viewBox="0 0 200 200" width="120" height="120" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="80" width="160" height="40" fill="none" stroke="rgba(184,168,152,.25)" stroke-width="1"/><text x="100" y="104" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="16" fill="rgba(255,255,255,.85)" letter-spacing="3">L'AVENUE</text><rect x="60" y="130" width="80" height="1" fill="rgba(198,241,53,.5)"/></svg>
+        <span style="font-family:var(--fm);font-size:.38rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.2rem .6rem">VIEW PDF ↗</span>
+      </div>
+      <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">L'AVENUE 19</div><div class="bc-desc">Luxury Venue — Branding, Signage, Typography</div></div>
+    </div>
+    <div class="bc rv" style="transition-delay:.12s;grid-column:1/13" onclick="openPDF('./assetes/images/brands/olampic dchira_compressed.pdf','OLYMPIC DCHIRA')">
+      <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="bc-vis" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem">
+        <svg viewBox="0 0 200 200" width="120" height="120" xmlns="http://www.w3.org/2000/svg"><polygon points="100,20 180,80 155,170 45,170 20,80" fill="none" stroke="rgba(224,64,48,.6)" stroke-width="1.5"/><text x="100" y="104" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="14" fill="rgba(255,255,255,.85)" letter-spacing="2">OLYMPIC</text></svg>
+        <span style="font-family:var(--fm);font-size:.38rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.2rem .6rem">VIEW PDF ↗</span>
+      </div>
+      <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">OLYMPIC DCHIRA</div><div class="bc-desc">Sports Club — Full Visual Identity, Colours, Logo System</div></div>
+    </div>
   </div>
 </section>
 
@@ -784,33 +804,35 @@ function closeModal(){
 document.getElementById('vmClose').addEventListener('click',closeModal);
 
 // ── Music covers sliding loop ─────────────────────────────────────────────
+const MBASE='./assetes/images/music/';
 const musicCovers=[
-  {name:'RIFT — FREQUENCY',type:'Single',svgId:'m1'},
-  {name:'NIGHT SESSIONS',type:'EP',svgId:'m2'},
-  {name:'COLLECTIVE VOL.1',type:'Album',svgId:'m3'},
-  {name:'ECHO CHAMBER',type:'EP',svgId:'m4'},
-  {name:'RAW CUT 001',type:'Single',svgId:'m5'},
-  {name:'STATIC',type:'Album',svgId:'m6'},
+  {name:'ARRI TAZAL',type:'Single',img:'ARRI TAZAL_640x640.jpg'},
+  {name:'CHAOS',type:'Single',img:'CHAOS_640x640.jpg'},
+  {name:'Da Diss',type:'Single',img:'Da Diss_640x640.jpg'},
+  {name:'Ezzayoko',type:'Single',img:'Ezzayoko_640x640.jpg'},
+  {name:'Fin Ghadi',type:'Single',img:'Fin Ghadi_640x640.jpg'},
+  {name:'Flows',type:'Single',img:'Flows_640x640.jpg'},
+  {name:'Gless',type:'Single',img:'Gless_640x640.jpg'},
+  {name:'Green March',type:'Single',img:'Green March_640x640.jpg'},
+  {name:'HOUDINI',type:'Single',img:'HOUDINI_640x640.jpg'},
+  {name:'IGGI',type:'Single',img:'IGGI_640x640.jpg'},
+  {name:'MA3GAZ',type:'Single',img:'MA3GAZ_640x640.jpg'},
+  {name:'NANANI NANANA',type:'Single',img:'NANANI NANANA_640x640.jpg'},
+  {name:'NSIT RASSI',type:'Single',img:'NSIT RASSI_640x640.jpg'},
+  {name:'OBSESSED',type:'Single',img:'OBSESSED_640x640.jpg'},
+  {name:'Slow',type:'Single',img:'Slow_640x640.jpg'},
+  {name:'TIMELAPSE',type:'Single',img:'TIMELAPSE_640x640.jpg'},
+  {name:'VESSO',type:'Single',img:'VESSO_640x640.jpg'},
+  {name:'VILLA',type:'Single',img:'VILLA_640x640.jpg'},
+  {name:'Why U Crying',type:'Single',img:'Why U Crying_640x640.jpg'},
 ];
-const musicSVGs={
-  m1:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#0d0225"/><polygon points="140,38 226,206 54,206" fill="none" stroke="#c6f135" stroke-width="1.8"/><polygon points="140,80 200,186 80,186" fill="#c6f135" opacity=".08"/><line x1="0" y1="206" x2="280" y2="206" stroke="#c6f135" stroke-width=".7" opacity=".5"/><text x="140" y="234" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="9" fill="#c6f135" letter-spacing="8" opacity=".7">RIFT — FREQUENCY</text></svg>`,
-  m2:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#04050e"/><circle cx="140" cy="130" r="96" fill="none" stroke="#00bfa5" stroke-width="1.4" opacity=".9"/><circle cx="140" cy="130" r="64" fill="none" stroke="#00bfa5" stroke-width="1" opacity=".6"/><circle cx="140" cy="130" r="32" fill="none" stroke="#00bfa5" stroke-width=".7" opacity=".4"/><circle cx="140" cy="130" r="7" fill="#00bfa5" opacity=".95"/><text x="140" y="250" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="9" fill="#00bfa5" letter-spacing="8" opacity=".7">NIGHT SESSIONS</text></svg>`,
-  m3:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#1a0600"/><defs><linearGradient id="mm3g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e04030" stop-opacity=".95"/><stop offset="100%" stop-color="#ff8020" stop-opacity=".25"/></linearGradient></defs><rect width="280" height="280" fill="url(#mm3g)"/><rect x="22" y="110" width="236" height="60" fill="rgba(0,0,0,.6)"/><text x="140" y="144" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="24" fill="white" letter-spacing="6">COLLECTIVE</text><text x="22" y="100" font-family="'Bebas Neue',sans-serif" font-size="9" fill="rgba(255,255,255,.4)" letter-spacing="5">VOL.1</text></svg>`,
-  m4:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#010c14"/><rect x="44" y="44" width="192" height="192" fill="none" stroke="#00bfa5" stroke-width="1.4" opacity=".75"/><rect x="80" y="80" width="120" height="120" fill="none" stroke="#00bfa5" stroke-width=".9" opacity=".5"/><rect x="116" y="116" width="48" height="48" fill="rgba(0,191,165,.18)"/><text x="140" y="254" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="9" fill="#00bfa5" letter-spacing="6" opacity=".7">ECHO CHAMBER</text></svg>`,
-  m5:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#050505"/><defs><pattern id="mp5g" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="14" y2="0" stroke="#111" stroke-width=".6"/><line x1="0" y1="0" x2="0" y2="14" stroke="#111" stroke-width=".6"/></pattern></defs><rect width="280" height="280" fill="url(#mp5g)"/><rect x="0" y="114" width="280" height="52" fill="#c6f135"/><text x="140" y="142" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="22" fill="#000" letter-spacing="8">RAW CUT 001</text></svg>`,
-  m6:`<svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="280" fill="#050505"/><defs><pattern id="mp6d" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r=".6" fill="rgba(255,255,255,.07)"/></pattern></defs><rect width="280" height="280" fill="url(#mp6d)"/><text x="140" y="148" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="52" fill="rgba(255,255,255,.92)" letter-spacing="1">STATIC</text><line x1="22" y1="176" x2="258" y2="176" stroke="rgba(255,255,255,.15)" stroke-width=".8"/></svg>`,
-};
 
 const mt=document.getElementById('musicTrack');
-[...musicCovers,...musicCovers].forEach((m,i)=>{
-  const imgSrc=`./assetes/images/music/${m.name.toLowerCase().replace(/[^a-z0-9]/g,'-')}.jpg`;
+[...musicCovers,...musicCovers].forEach(m=>{
   const div=document.createElement('div');div.className='mcc';
-  const svgStr=(musicSVGs[m.svgId]||'');
   div.innerHTML=`<div class="mcc-vis">
-    ${svgStr}
-    <img src="${imgSrc}" alt="${m.name}"
-      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"
-      onerror="this.style.display='none'">
+    <img src="${MBASE+encodeURIComponent(m.img)}" alt="${m.name}" loading="lazy"
+      style="width:100%;height:100%;object-fit:cover;display:block">
     <div class="mcc-ov"><div class="mcc-ov-title">${m.name}</div><div class="mcc-ov-sub">${m.type}</div></div>
   </div>
   <div class="mcc-bar"><span class="mcc-name">${m.name}</span><span class="mcc-type">${m.type}</span></div>`;
@@ -856,19 +878,22 @@ const postsSportsData=[
   {w:'sq',img:pi('📸 Some shots from Today victory against JSS🔴 ⚪️#BotolaProInwi #HusavsJss (1).jpg'),lbl:'HUSA vs JSS',tp:'Post'},
   {w:'sq',img:pi('📸 Some shots from Today victory against JSS🔴 ⚪️#BotolaProInwi #HusavsJss (2).jpg'),lbl:'HUSA vs JSS',tp:'Post'},
   {w:'sq',img:pi('📸 Some shots from Today victory against JSS🔴 ⚪️#BotolaProInwi #HusavsJss (3).jpg'),lbl:'HUSA vs JSS',tp:'Post'},
+  {w:'sq',img:pi('Elevate your fitness journey surrounded by the breathtaking views of Agadir! 🏞️🏋️_♀️ Join us a.jpg'),lbl:'Elide Fitness',tp:'Post'},
+  {w:'sq',img:pi('Le pouvoir féminin frappe fort à Élide Fitness Club Boxe Anglaise ! 👊💪 Découvrez un espace déd.jpg'),lbl:'Elide Boxing',tp:'Post'},
+  {w:'sq',img:pi('🏋️_♀️ Prêts pour une semaine de défi au Elide Fitness Club, Agadir  💪En ce lundi, nous avons p.jpg'),lbl:'Elide Challenge',tp:'Post'},
 ];
 // Photoshooting
 const postsDesignData=[
   {w:'sq',img:pi('GHA ZID.png'),lbl:'GHA ZID',tp:'Post'},
-  {w:'sq',img:pi('1.png'),lbl:'Design',tp:'Post'},{w:'sq',img:pi('2.png'),lbl:'Design',tp:'Post'},
-  {w:'sq',img:pi('3.png'),lbl:'Design',tp:'Post'},{w:'sq',img:pi('4.png'),lbl:'Design',tp:'Post'},
-  {w:'sq',img:pi('4-.png'),lbl:'Design',tp:'Post'},{w:'sq',img:pi('5.png'),lbl:'Design',tp:'Post'},
-  {w:'sq',img:pi('6.png'),lbl:'Design',tp:'Post'},{w:'sq',img:pi('7.png'),lbl:'Design',tp:'Post'},
-  {w:'sq',img:pi('8.png'),lbl:'Design',tp:'Post'},{w:'sq',img:pi('9.png'),lbl:'Design',tp:'Post'},
-  {w:'sq',img:pi('10.png'),lbl:'Design',tp:'Post'},{w:'sq',img:pi('11.png'),lbl:'Design',tp:'Post'},
-  {w:'sq',img:pi('12.png'),lbl:'Design',tp:'Post'},{w:'sq',img:pi('13.png'),lbl:'Design',tp:'Post'},
-  {w:'sq',img:pi('14.png'),lbl:'Design',tp:'Post'},{w:'sq',img:pi('15.png'),lbl:'Design',tp:'Post'},
-  {w:'sq',img:pi('16.png'),lbl:'Design',tp:'Post'},
+  {w:'sq',img:pi('1.png'),lbl:'Photoshooting',tp:'Post'},{w:'sq',img:pi('2.png'),lbl:'Photoshooting',tp:'Post'},
+  {w:'sq',img:pi('3.png'),lbl:'Photoshooting',tp:'Post'},{w:'sq',img:pi('4.png'),lbl:'Photoshooting',tp:'Post'},
+  {w:'sq',img:pi('4-.png'),lbl:'Photoshooting',tp:'Post'},{w:'sq',img:pi('5.png'),lbl:'Photoshooting',tp:'Post'},
+  {w:'sq',img:pi('6.png'),lbl:'Photoshooting',tp:'Post'},{w:'sq',img:pi('7.png'),lbl:'Photoshooting',tp:'Post'},
+  {w:'sq',img:pi('8.png'),lbl:'Photoshooting',tp:'Post'},{w:'sq',img:pi('9.png'),lbl:'Photoshooting',tp:'Post'},
+  {w:'sq',img:pi('10.png'),lbl:'Photoshooting',tp:'Post'},{w:'sq',img:pi('11.png'),lbl:'Photoshooting',tp:'Post'},
+  {w:'sq',img:pi('12.png'),lbl:'Photoshooting',tp:'Post'},{w:'sq',img:pi('13.png'),lbl:'Photoshooting',tp:'Post'},
+  {w:'sq',img:pi('14.png'),lbl:'Photoshooting',tp:'Post'},{w:'sq',img:pi('15.png'),lbl:'Photoshooting',tp:'Post'},
+  {w:'sq',img:pi('16.png'),lbl:'Photoshooting',tp:'Post'},
   {w:'sq',img:pi('70.jpg'),lbl:'70 Series',tp:'Post'},{w:'sq',img:pi('70_1.jpg'),lbl:'70 Series',tp:'Post'},
   {w:'sq',img:pi('70_2.jpg'),lbl:'70 Series',tp:'Post'},{w:'sq',img:pi('70_3.jpg'),lbl:'70 Series',tp:'Post'},
   {w:'sq',img:pi('70_4.jpg'),lbl:'70 Series',tp:'Post'},{w:'sq',img:pi('70_5.jpg'),lbl:'70 Series',tp:'Post'},
@@ -884,6 +909,17 @@ buildTrack('postsLuxury',postsLuxuryData);
 buildTrack('postsSports',postsSportsData);
 buildTrack('postsDesign',postsDesignData);
 addHover('.psc');
+
+// ── Brand PDF viewer ─────────────────────────────────────────────────────
+function openPDF(url,title){
+  vmContent.innerHTML=`<div style="display:flex;flex-direction:column;gap:1rem;width:min(90vw,1000px);height:85vh">
+    <div style="font-family:var(--fd);font-size:1.6rem;letter-spacing:.08em;color:#fff">${title}</div>
+    <iframe src="${url}" style="flex:1;border:1px solid var(--brd);width:100%;display:block"></iframe>
+    <a href="${url}" target="_blank" style="font-family:var(--fm);font-size:.44rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);text-decoration:none;border:1px solid var(--brd2);padding:.35rem .8rem;align-self:flex-start;transition:color .25s,border-color .25s" onmouseover="this.style.color='#fff';this.style.borderColor='#fff'" onmouseout="this.style.color='var(--stone)';this.style.borderColor='var(--brd2)'">OPEN IN NEW TAB ↗</a>
+  </div>`;
+  vmodal.classList.add('open');
+  document.body.style.overflow='hidden';
+}
 
 // ── Reveal on scroll — runs AFTER all dynamic content is in DOM ──────────
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.05,rootMargin:'0px 0px -20px 0px'});
