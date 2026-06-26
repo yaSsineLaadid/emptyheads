@@ -123,27 +123,19 @@ section{padding:6.5rem 2.5rem}
 
 /* ─ IDENTITY ─ */
 #identity{background:var(--bg2);padding-bottom:5rem}
-.idwrap{overflow:hidden;width:100%}
-.idtrack{display:flex;animation:idroll 22s linear infinite;width:max-content}
-.idtrack:hover{animation-play-state:paused}
-@keyframes idroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.bc{flex-shrink:0;width:420px;margin-right:2px;position:relative;overflow:hidden;background:var(--bg);transition:outline .3s;cursor:pointer;outline:1px solid transparent}
+.id-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.bc{position:relative;overflow:hidden;background:var(--bg);transition:outline .3s;cursor:pointer;outline:1px solid transparent}
 .bc:hover{outline-color:var(--stone);z-index:2}
-
-.bc-vis{height:380px;overflow:hidden;position:relative;background:var(--bg3)}
-.bc-scroll{position:absolute;top:0;left:0;right:0;transform:translateY(0);transition:transform 13s ease-out;will-change:transform}
-.bc:hover .bc-scroll{transform:translateY(calc(-100% + 380px))}
-.bc-scroll img{width:100%;height:auto;display:block}
-.bc-svg{width:100%;height:380px;display:block}
-
-.bc-info{padding:1.2rem 1.4rem;border-top:1px solid var(--brd);background:var(--bg)}
-.bc-tag{font-family:var(--fm);font-size:.42rem;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);margin-bottom:.4rem}
-.bc-name{font-family:var(--fd);font-size:1.6rem;letter-spacing:.05em;color:#fff;margin-bottom:.15rem}
-.bc-desc{font-family:var(--fm);font-size:.46rem;color:var(--fg3)}
-.bc-arr{position:absolute;top:1rem;right:1rem;width:26px;height:26px;border:1px solid var(--brd2);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s,background .3s,border-color .3s}
-.bc:hover .bc-arr{opacity:1;background:var(--stone);border-color:var(--stone)}
-.bc-arr svg{width:11px;height:11px;stroke:#000;fill:none;stroke-width:2}
-.bc-pdf{display:inline-block;font-family:var(--fm);font-size:.38rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.15rem .45rem;margin-top:.4rem}
+.bc-vis{height:620px;overflow:hidden;position:relative;background:var(--bg3)}
+.bc-pf{position:absolute;top:0;left:0;right:0;height:210%;transition:transform 16s ease-out;will-change:transform;pointer-events:none}
+.bc-pf iframe{width:100%;height:100%;border:none;pointer-events:none}
+.bc:hover .bc-pf{transform:translateY(-36%)}
+.bc-article{position:absolute;bottom:0;left:0;right:0;padding:4rem 2rem 2rem;background:linear-gradient(to top,rgba(0,0,0,.97) 0%,rgba(0,0,0,.85) 45%,transparent 100%);z-index:3}
+.bc-a-type{font-family:var(--fm);font-size:.44rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:.6rem}
+.bc-a-name{font-family:var(--fd);font-size:clamp(2rem,3vw,3rem);letter-spacing:.04em;color:#fff;line-height:.88;margin-bottom:1rem}
+.bc-a-body{font-family:var(--fm);font-size:.58rem;line-height:2.1;color:rgba(245,245,240,.65);margin-bottom:1.3rem}
+.bc-a-open{font-family:var(--fm);font-size:.42rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;border:1px solid var(--brd2);padding:.32rem .85rem;background:none;cursor:pointer;transition:border-color .25s,background .25s;display:inline-block;text-decoration:none}
+.bc-a-open:hover{border-color:var(--stone);background:rgba(184,168,152,.12)}
 .bm-pdf-wrap{display:flex;flex-direction:column;gap:1rem;padding:2rem;height:100%}
 .bm-pdf-wrap iframe{flex:1;min-height:70vh;border:1px solid var(--brd);width:100%}
 .bm-pdf-open{font-family:var(--fm);font-size:.44rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);text-decoration:none;border:1px solid var(--brd2);padding:.4rem .9rem;text-align:center;transition:color .25s,border-color .25s;flex-shrink:0}
@@ -359,11 +351,16 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 .ftsoc a:hover{color:var(--stone)}
 
 /* ─ SECTION INTRO & WORK NOTES ─ */
-.sec-intro{font-family:var(--fm);font-size:.52rem;line-height:2.3;color:var(--fg2);max-width:720px;padding:0 0 2.8rem}
+.sec-intro{font-family:var(--fm);font-size:.78rem;line-height:2.0;color:var(--fg2);max-width:780px;padding:0 0 2.8rem}
 .sec-intro p{margin-bottom:1rem}.sec-intro p:last-child{margin-bottom:0}
 .sec-intro strong{color:var(--stone);font-weight:700}
 .sec-pills{display:flex;flex-wrap:wrap;gap:.55rem;padding:0 0 2.5rem}
-.sec-pill{font-family:var(--fm);font-size:.38rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.22rem .7rem}
+.sec-pill{font-family:var(--fm);font-size:.44rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.26rem .8rem}
+.sec-article{display:grid;grid-template-columns:1fr 1.6fr;gap:0 5rem;padding:3.5rem 2.5rem;border-top:1px solid var(--brd)}
+.sec-art-hl{font-family:var(--fd);font-size:clamp(2.6rem,4.2vw,4.2rem);line-height:.88;color:#fff;align-self:start;padding-top:.2rem}
+.sec-art-body{font-family:var(--fm);font-size:.72rem;line-height:2.1;color:var(--fg2)}
+.sec-art-body p{margin-bottom:1rem}.sec-art-body p:last-child{margin-bottom:0}
+.sec-art-body strong{color:var(--stone);font-weight:700}
 .work-note{padding:3.5rem 2.5rem;border-top:1px solid var(--brd);background:var(--bg3)}
 .wn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 2.5rem}
 .wn-statement{font-family:var(--fd);font-size:clamp(2.4rem,4.8vw,4.4rem);line-height:.88;color:#fff;grid-column:1/-1;padding-bottom:2.5rem;border-bottom:1px solid var(--brd);margin-bottom:0}
@@ -371,10 +368,10 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 .wn-col:first-of-type{border-left:none;padding-left:0}
 .wn-accent{font-family:var(--fd);font-size:2.2rem;line-height:1;margin-bottom:.5rem}
 .wn-col h4{font-family:var(--fd);font-size:1.1rem;letter-spacing:.07em;color:#fff;margin-bottom:.7rem;line-height:.9;text-transform:uppercase}
-.wn-col p{font-family:var(--fm);font-size:.5rem;line-height:2.3;color:var(--fg2)}
+.wn-col p{font-family:var(--fm);font-size:.65rem;line-height:2.1;color:var(--fg2)}
 .wn-stat-row{grid-column:1/-1;display:flex;gap:4rem;padding-top:2.2rem;border-top:1px solid var(--brd);margin-top:2rem}
 .wn-stat .wn-n{font-family:var(--fd);font-size:2.6rem;color:#fff;line-height:1}
-.wn-stat .wn-l{font-family:var(--fm);font-size:.4rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fg3);margin-top:.3rem}
+.wn-stat .wn-l{font-family:var(--fm);font-size:.44rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fg3);margin-top:.3rem}
 
 /* ─ 3D FLOATING ICONS ─ */
 #services,#videos,#music,#posts,#arts,#identity{position:relative}
@@ -392,11 +389,13 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   .icon3d{display:none}
   .vid-hd,.mc-hd,.posts-hd{padding-right:1.2rem}
   .hstats{gap:1.5rem}
-  .bc{width:300px}
+  .id-grid{grid-template-columns:1fr}
+  .bc-vis{height:480px}
   .work-note{padding:2.5rem 1.2rem}
   .wn-grid{grid-template-columns:1fr}
   .wn-col{border-left:none;padding-left:0;border-top:1px solid var(--brd)}
   .wn-stat-row{flex-direction:column;gap:1.5rem}
+  .sec-article{grid-template-columns:1fr;gap:1.8rem 0;padding:2.5rem 1.2rem}
 .shows-grid{grid-template-columns:1fr;margin-right:1.2rem}
   .arts-grid{grid-template-columns:repeat(2,1fr)}
   .wg{grid-template-columns:1fr}
@@ -586,29 +585,41 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   </div>
   <div class="sec-intro rv"><p>From the first mark to the full visual system — we build brands that <strong>mean something</strong>. Every logo has a reason. Every colour earns its place. Every typeface says something before a single word is read.</p><p>We design the complete language a brand speaks — logo systems, colour palettes, typography hierarchies, brand guidelines and every touchpoint that follows. The kind of identity that scales from a phone screen to a stadium wall and still hits the same.</p></div>
   <div class="sec-pills rv"><span class="sec-pill">Logo Design</span><span class="sec-pill">Visual Guidelines</span><span class="sec-pill">Typography Systems</span><span class="sec-pill">Colour Palettes</span><span class="sec-pill">Brand Strategy</span><span class="sec-pill">Print & Signage</span></div>
-  <div class="idwrap"><div class="idtrack" id="idTrack">
+  <div class="id-grid">
     <div class="bc" onclick="openPDF('./assetes/images/brands/fc morokko herne_compressed.pdf','FC MOROKKO HERNE')">
-      <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="bc-vis">
-        <iframe src="./assetes/images/brands/fc morokko herne_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none"></iframe>
+        <div class="bc-pf"><iframe src="./assetes/images/brands/fc morokko herne_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" loading="lazy"></iframe></div>
+        <div class="bc-article">
+          <span class="bc-a-type">Football Club · Germany</span>
+          <div class="bc-a-name">FC MOROKKO HERNE</div>
+          <p class="bc-a-body">Complete visual identity for a German-based Moroccan football club — logo system, kit design, colour palette, and brand guidelines built to carry community pride on every surface.</p>
+          <button class="bc-a-open" onclick="event.stopPropagation();openPDF('./assetes/images/brands/fc morokko herne_compressed.pdf','FC MOROKKO HERNE')">View Full PDF ↗</button>
+        </div>
       </div>
-      <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">FC MOROKKO HERNE</div><div class="bc-desc">Football Club — Logo, Kit, Visual System</div></div>
     </div>
     <div class="bc" onclick="openPDF('./assetes/images/brands/l avenue 19_compressed.pdf','L\'AVENUE 19')">
-      <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="bc-vis">
-        <iframe src="./assetes/images/brands/l avenue 19_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none"></iframe>
+        <div class="bc-pf"><iframe src="./assetes/images/brands/l avenue 19_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" loading="lazy"></iframe></div>
+        <div class="bc-article">
+          <span class="bc-a-type">Luxury Venue · Hospitality</span>
+          <div class="bc-a-name">L'AVENUE 19</div>
+          <p class="bc-a-body">Premium venue branding from naming and logomark through to signage system and typography hierarchy — built to feel unmistakably high-end at first glance and at any scale.</p>
+          <button class="bc-a-open" onclick="event.stopPropagation();openPDF('./assetes/images/brands/l avenue 19_compressed.pdf','L\'AVENUE 19')">View Full PDF ↗</button>
+        </div>
       </div>
-      <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">L'AVENUE 19</div><div class="bc-desc">Luxury Venue — Branding, Signage, Typography</div></div>
     </div>
     <div class="bc" onclick="openPDF('./assetes/images/brands/olampic dchira_compressed.pdf','OLYMPIC DCHIRA')">
-      <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="bc-vis">
-        <iframe src="./assetes/images/brands/olampic dchira_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" style="width:100%;height:100%;border:none;pointer-events:none"></iframe>
+        <div class="bc-pf"><iframe src="./assetes/images/brands/olampic dchira_compressed.pdf#toolbar=0&navpanes=0&scrollbar=0" loading="lazy"></iframe></div>
+        <div class="bc-article">
+          <span class="bc-a-type">Sports Club · Morocco</span>
+          <div class="bc-a-name">OLYMPIC DCHIRA</div>
+          <p class="bc-a-body">Full visual identity for a Moroccan sports club — logo system, colour palette, kit application, and brand guidelines designed to carry the club from local fields to national competition.</p>
+          <button class="bc-a-open" onclick="event.stopPropagation();openPDF('./assetes/images/brands/olampic dchira_compressed.pdf','OLYMPIC DCHIRA')">View Full PDF ↗</button>
+        </div>
       </div>
-      <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">OLYMPIC DCHIRA</div><div class="bc-desc">Sports Club — Full Visual Identity, Colours, Logo System</div></div>
     </div>
-  </div></div>
+  </div>
   <div class="work-note">
     <div class="wn-grid">
       <div class="wn-statement">EVERY MARK<br>IS INTENTIONAL.</div>
@@ -633,6 +644,14 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   <div class="shows-grid" id="showsGrid"></div>
   <div class="vlabel rv" style="margin-top:2.5rem">Social Media Reels</div>
   <div class="vrwrap"><div class="vrtrack" id="reelsTrack"></div></div>
+  <div class="sec-article" style="margin-right:2.5rem">
+    <div class="sec-art-hl">SHORT-FORM<br>THAT PERFORMS.</div>
+    <div class="sec-art-body">
+      <p>Every reel starts with the hook — the first second that decides whether someone scrolls past or stops. We build from that moment outward: tight editing, deliberate music, movement that keeps the eye in until the very last frame.</p>
+      <p>Our reels perform because they're <strong>designed to</strong>. Not aesthetically — strategically. We study what the platform rewards and then make content that earns it through genuine quality. Clubs, resorts, sports clubs, medical brands — across every category we produce for, engagement runs well above average.</p>
+      <p>No paid push behind the numbers. Just content that deserved its views.</p>
+    </div>
+  </div>
   <div class="work-note" style="background:var(--bg);margin-right:2.5rem">
     <div class="wn-grid">
       <div class="wn-statement">WE DOCUMENT<br>ENERGY IN MOTION.</div>
@@ -654,6 +673,14 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   <div class="sec-intro rv" style="padding-right:2.5rem"><p>A cover is the <strong>first thing someone sees</strong> before they hear a single note. We design artwork that makes people stop scrolling, save the track, and tell their friends about it — before they've even pressed play.</p><p>Every project starts with a listen. The mood, the tempo, the texture of the sound. We translate that into image, colour, type and composition until the visual hits as hard as the audio.</p></div>
   <div class="sec-pills rv" style="padding-right:2.5rem"><span class="sec-pill">Single Covers</span><span class="sec-pill">Album Artwork</span><span class="sec-pill">EP Sleeves</span><span class="sec-pill">Artist Visuals</span><span class="sec-pill">Typography</span><span class="sec-pill">Streaming Assets</span></div>
   <div class="mcwrap"><div class="mctrack" id="musicTrack"></div></div>
+  <div class="sec-article" style="padding-right:2.5rem;border-top-color:#1c2210">
+    <div class="sec-art-hl" style="color:var(--acid)">THE VISUAL<br>HALF OF THE TRACK.</div>
+    <div class="sec-art-body">
+      <p>Music without a strong visual is half a release. <strong>The cover is what gets saved, shared, and remembered</strong> — it exists on playlists, on social, on editorial pages — long before anyone hits play on the actual track.</p>
+      <p>We work with artists who understand that. From the first listen, we build a world around the sound — colour, mood, typography, composition. Every design decision maps back to what the music feels like, not what's trending this week.</p>
+      <p>19 covers released. 19 different worlds. Each one built to make the record feel like an event.</p>
+    </div>
+  </div>
   <div class="work-note" style="background:#030406;border-top:1px solid #1c2210">
     <div class="wn-grid">
       <div class="wn-statement" style="color:var(--acid);border-bottom-color:#1c2210">19 COVERS.<br>19 WORLDS.</div>
@@ -680,6 +707,14 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   <div class="pswrap"><div class="pstrack" id="postsSports" style="animation-duration:28s;animation-direction:normal"></div></div>
   <div class="vlabel rv" style="margin-top:2rem">Photoshooting</div>
   <div class="pswrap"><div class="pstrack" id="postsDesign" style="animation-duration:90s"></div></div>
+  <div class="sec-article" style="padding-right:2.5rem;border-top-color:#2a3a60;background:#05080f">
+    <div class="sec-art-hl" style="color:var(--retro-c)">CONTENT THAT<br>EARNS ITS PLACE.</div>
+    <div class="sec-art-body">
+      <p>Most brands post to fill a calendar. We post to <strong>build something</strong>. Every piece of content we make is designed to make the brand look more credible, more desirable, or more worth following — not just more present.</p>
+      <p>We work across luxury hospitality, football, fitness, and healthcare. Different industries, same standard: if a post doesn't earn its position in the feed, it doesn't go up. Aesthetic without strategy is decoration. We do both.</p>
+      <p>Hilton Taghazout Bay, HUSA FC, Elide Fitness — brands that show up every day and look better for it.</p>
+    </div>
+  </div>
   <div class="work-note" style="background:#05080f;border-top:1px solid #2a3a60">
     <div class="wn-grid">
       <div class="wn-statement" style="border-bottom-color:#2a3a60">BUILT FOR BRANDS<br>THAT SHOW UP EVERY DAY.</div>
@@ -758,6 +793,14 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
       </div>
     </div>
   </div>
+  <div class="sec-article" style="padding:3.5rem 2.5rem;border-top:1px solid var(--brd);background:#09060a">
+    <div class="sec-art-hl" style="color:var(--retro-r)">ART THAT<br>COMMANDS<br>THE ROOM.</div>
+    <div class="sec-art-body">
+      <p>Every piece starts with a question: <strong>what should this space feel like?</strong> Not what should it look like — what should it feel like. We work from that outward. Scale, colour, texture, reference, intention.</p>
+      <p>We pull from graffiti culture, pop art, street aesthetics and fine art technique — then deliberately collide them. Looney Tunes through a Moroccan street lens. Scarface rebuilt in oil. Pop icons reconstructed until they say something new and say it loud enough to fill a wall.</p>
+      <p>Canvas commissions, large-scale murals, mixed media. Made to be felt, not just seen. Made to outlast the trend it was made in.</p>
+    </div>
+  </div>
   <div class="work-note" style="background:#09060a;border-top:1px solid var(--brd)">
     <div class="wn-grid">
       <div class="wn-statement" style="color:var(--retro-r);border-bottom-color:#2a1a1a">CULTURE YOU CAN<br>SEE FROM THE STREET.</div>
@@ -794,7 +837,15 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
       <div class="wc-info"><div class="wc-title">ATLAS COLLECTIVE</div><div class="wc-desc">Magazine · Events · Community</div></div>
     </div>
   </div>
-  <div class="work-note" style="margin-top:2.5rem">
+  <div class="sec-article" style="margin-top:2.5rem">
+    <div class="sec-art-hl">WEBSITES BUILT<br>TO CONVERT.</div>
+    <div class="sec-art-body">
+      <p>A website is not a brochure. It's the first impression, the sales tool, the 24-hour representative of the brand. <strong>We build from that responsibility</strong> — every page designed to load fast, feel right, and do something specific.</p>
+      <p>No templates. No page builders. Every site we build starts from a blank canvas — the architecture, the layout, the interactions, the copy rhythm — all mapped to what the brand needs to achieve and who it's trying to reach.</p>
+      <p>Portfolios, brand sites, artist pages, event platforms. Built to look sharp, perform technically, and make the people who land on them feel like they've found exactly the right place.</p>
+    </div>
+  </div>
+  <div class="work-note" style="margin-top:0;border-top:1px solid var(--brd)">
     <div class="wn-grid">
       <div class="wn-statement">DIGITAL HOMES<br>THAT DO THE WORK.</div>
       <div class="wn-col"><div class="wn-accent" style="color:var(--stone)">Design</div><h4>Zero Templates</h4><p>Every site starts from a blank canvas — designed specifically for the brand, the audience and the goal. The feel, the flow, the small details that make someone trust you the moment the page loads and keep browsing rather than closing the tab.</p></div>
@@ -1071,13 +1122,6 @@ buildTrack('postsLuxury',postsLuxuryData);
 buildTrack('postsSports',postsSportsData);
 buildTrack('postsDesign',postsDesignData);
 addHover('.psc');
-
-// Duplicate brand identity cards for seamless carousel loop
-(function(){
-  const t=document.getElementById('idTrack');
-  if(!t)return;
-  [...t.children].forEach(c=>t.appendChild(c.cloneNode(true)));
-})();
 
 // ── Brand PDF viewer ─────────────────────────────────────────────────────
 function openPDF(url,title){
