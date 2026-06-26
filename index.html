@@ -358,6 +358,24 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 .ftsoc a{font-family:var(--fm);font-size:.42rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--fg3);text-decoration:none;transition:color .25s}
 .ftsoc a:hover{color:var(--stone)}
 
+/* ─ SECTION INTRO & WORK NOTES ─ */
+.sec-intro{font-family:var(--fm);font-size:.52rem;line-height:2.3;color:var(--fg2);max-width:720px;padding:0 0 2.8rem}
+.sec-intro p{margin-bottom:1rem}.sec-intro p:last-child{margin-bottom:0}
+.sec-intro strong{color:var(--stone);font-weight:700}
+.sec-pills{display:flex;flex-wrap:wrap;gap:.55rem;padding:0 0 2.5rem}
+.sec-pill{font-family:var(--fm);font-size:.38rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);border:1px solid var(--brd2);padding:.22rem .7rem}
+.work-note{padding:3.5rem 2.5rem;border-top:1px solid var(--brd);background:var(--bg3)}
+.wn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 2.5rem}
+.wn-statement{font-family:var(--fd);font-size:clamp(2.4rem,4.8vw,4.4rem);line-height:.88;color:#fff;grid-column:1/-1;padding-bottom:2.5rem;border-bottom:1px solid var(--brd);margin-bottom:0}
+.wn-col{padding-top:1.8rem;padding-left:1.5rem;border-left:1px solid var(--brd)}
+.wn-col:first-of-type{border-left:none;padding-left:0}
+.wn-accent{font-family:var(--fd);font-size:2.2rem;line-height:1;margin-bottom:.5rem}
+.wn-col h4{font-family:var(--fd);font-size:1.1rem;letter-spacing:.07em;color:#fff;margin-bottom:.7rem;line-height:.9;text-transform:uppercase}
+.wn-col p{font-family:var(--fm);font-size:.5rem;line-height:2.3;color:var(--fg2)}
+.wn-stat-row{grid-column:1/-1;display:flex;gap:4rem;padding-top:2.2rem;border-top:1px solid var(--brd);margin-top:2rem}
+.wn-stat .wn-n{font-family:var(--fd);font-size:2.6rem;color:#fff;line-height:1}
+.wn-stat .wn-l{font-family:var(--fm);font-size:.4rem;letter-spacing:.2em;text-transform:uppercase;color:var(--fg3);margin-top:.3rem}
+
 /* ─ 3D FLOATING ICONS ─ */
 #services,#videos,#music,#posts,#arts,#identity{position:relative}
 .icon3d{position:absolute;pointer-events:none;z-index:1}
@@ -375,6 +393,10 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   .vid-hd,.mc-hd,.posts-hd{padding-right:1.2rem}
   .hstats{gap:1.5rem}
   .bc{width:300px}
+  .work-note{padding:2.5rem 1.2rem}
+  .wn-grid{grid-template-columns:1fr}
+  .wn-col{border-left:none;padding-left:0;border-top:1px solid var(--brd)}
+  .wn-stat-row{flex-direction:column;gap:1.5rem}
 .shows-grid{grid-template-columns:1fr;margin-right:1.2rem}
   .arts-grid{grid-template-columns:repeat(2,1fr)}
   .wg{grid-template-columns:1fr}
@@ -562,6 +584,8 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     <div><div class="sn">Identity Work</div><h2 class="sttl">BRAND<br>IDENTITY</h2></div>
     <p class="ssub">Visual systems, logos and full brand guidelines built to last.</p>
   </div>
+  <div class="sec-intro rv"><p>From the first mark to the full visual system — we build brands that <strong>mean something</strong>. Every logo has a reason. Every colour earns its place. Every typeface says something before a single word is read.</p><p>We design the complete language a brand speaks — logo systems, colour palettes, typography hierarchies, brand guidelines and every touchpoint that follows. The kind of identity that scales from a phone screen to a stadium wall and still hits the same.</p></div>
+  <div class="sec-pills rv"><span class="sec-pill">Logo Design</span><span class="sec-pill">Visual Guidelines</span><span class="sec-pill">Typography Systems</span><span class="sec-pill">Colour Palettes</span><span class="sec-pill">Brand Strategy</span><span class="sec-pill">Print & Signage</span></div>
   <div class="idwrap"><div class="idtrack" id="idTrack">
     <div class="bc" onclick="openPDF('./assetes/images/brands/fc morokko herne_compressed.pdf','FC MOROKKO HERNE')">
       <div class="bc-arr"><svg viewBox="0 0 10 10"><path d="M1,9 L9,1 M4,1 L9,1 L9,6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -585,6 +609,15 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
       <div class="bc-info"><div class="bc-tag">Brand Identity</div><div class="bc-name">OLYMPIC DCHIRA</div><div class="bc-desc">Sports Club — Full Visual Identity, Colours, Logo System</div></div>
     </div>
   </div></div>
+  <div class="work-note">
+    <div class="wn-grid">
+      <div class="wn-statement">EVERY MARK<br>IS INTENTIONAL.</div>
+      <div class="wn-col"><div class="wn-accent" style="color:var(--acid)">01</div><h4>Logo System</h4><p>The visual anchor of every brand. We design marks that work at any size, in any format, on any surface — business card to billboard. Vector-precise, future-proof, and built to be recognised before anyone reads the name beside it.</p></div>
+      <div class="wn-col"><div class="wn-accent" style="color:var(--retro-r)">02</div><h4>Visual Language</h4><p>Colour palettes chosen with purpose. Typography hierarchies that communicate before the words do. A visual tone of voice that is unmistakably yours — and impossible to replicate — because every decision has a reason behind it.</p></div>
+      <div class="wn-col"><div class="wn-accent" style="color:var(--retro-c)">03</div><h4>Brand Guidelines</h4><p>A complete document covering every rule, every use case, every permitted variation. So the brand looks exactly right on a sticker, a storefront, a kit or a screen — without you having to ask us every time.</p></div>
+      <div class="wn-stat-row"><div class="wn-stat"><div class="wn-n">47+</div><div class="wn-l">Brands Built</div></div><div class="wn-stat"><div class="wn-n">3</div><div class="wn-l">Full Identity Books Shown</div></div><div class="wn-stat"><div class="wn-n">100%</div><div class="wn-l">Custom — No Templates Ever</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- VIDEOS -->
@@ -594,10 +627,21 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     <div><div class="sn">02 / 05 — Videos</div><h2 class="sttl">REELS &amp;<br>SHOWS</h2></div>
     <p class="ssub" style="padding-right:2.5rem">Social media reels, brand films, live events and festival coverage.</p>
   </div>
+  <div class="sec-intro rv" style="padding-right:2.5rem"><p>We shoot and edit video that actually performs — short-form social reels that stop the feed, and full show coverage that captures the real energy of a night. <strong>15 seconds or 15 minutes</strong>, the standard is the same.</p><p>From club nights and festival stages to brand films and sports days — we document what happened and make it feel like something worth watching twice.</p></div>
+  <div class="sec-pills rv" style="padding-right:2.5rem"><span class="sec-pill">Social Reels</span><span class="sec-pill">Event Coverage</span><span class="sec-pill">Festival Films</span><span class="sec-pill">Brand Films</span><span class="sec-pill">Sports</span><span class="sec-pill">Editing & Motion</span></div>
   <div class="vlabel rv">Shows &amp; Festivals</div>
   <div class="shows-grid" id="showsGrid"></div>
   <div class="vlabel rv" style="margin-top:2.5rem">Social Media Reels</div>
   <div class="vrwrap"><div class="vrtrack" id="reelsTrack"></div></div>
+  <div class="work-note" style="background:var(--bg);margin-right:2.5rem">
+    <div class="wn-grid">
+      <div class="wn-statement">WE DOCUMENT<br>ENERGY IN MOTION.</div>
+      <div class="wn-col"><div class="wn-accent" style="color:var(--retro-r)">Shows</div><h4>Live Coverage</h4><p>Club nights, festivals, live performances, brand activations. We embed inside the event and capture everything worth keeping — the stage, the crowd, the moments between sets. Raw and cinematic at the same time.</p></div>
+      <div class="wn-col"><div class="wn-accent" style="color:var(--retro-r)">Reels</div><h4>Short-Form Content</h4><p>Instagram and TikTok content built to perform. Hook in the first second, value all the way through, impossible not to share by the end. We have produced reels that hit over 2 million organic views — no paid push behind them.</p></div>
+      <div class="wn-col"><div class="wn-accent" style="color:var(--retro-r)">Reach</div><h4>Real Numbers</h4><p>Sports coverage, hospitality reels, medical awareness campaigns, festival films — across every category we produce for, engagement runs well above average. Content that earns its views because it actually deserves them.</p></div>
+      <div class="wn-stat-row"><div class="wn-stat"><div class="wn-n">200+</div><div class="wn-l">Reels Produced</div></div><div class="wn-stat"><div class="wn-n">12M+</div><div class="wn-l">Total Views Generated</div></div><div class="wn-stat"><div class="wn-n">6+</div><div class="wn-l">Festivals & Shows Covered</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- MUSIC COVERS -->
@@ -607,7 +651,18 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     <div><div class="sn">03 / 05 — Music</div><h2 class="sttl">MUSIC<br>COVERS</h2></div>
     <p class="ssub" style="padding-right:2.5rem">Album art, single covers, EP artwork. Visual identity for sound.</p>
   </div>
+  <div class="sec-intro rv" style="padding-right:2.5rem"><p>A cover is the <strong>first thing someone sees</strong> before they hear a single note. We design artwork that makes people stop scrolling, save the track, and tell their friends about it — before they've even pressed play.</p><p>Every project starts with a listen. The mood, the tempo, the texture of the sound. We translate that into image, colour, type and composition until the visual hits as hard as the audio.</p></div>
+  <div class="sec-pills rv" style="padding-right:2.5rem"><span class="sec-pill">Single Covers</span><span class="sec-pill">Album Artwork</span><span class="sec-pill">EP Sleeves</span><span class="sec-pill">Artist Visuals</span><span class="sec-pill">Typography</span><span class="sec-pill">Streaming Assets</span></div>
   <div class="mcwrap"><div class="mctrack" id="musicTrack"></div></div>
+  <div class="work-note" style="background:#030406;border-top:1px solid #1c2210">
+    <div class="wn-grid">
+      <div class="wn-statement" style="color:var(--acid);border-bottom-color:#1c2210">19 COVERS.<br>19 WORLDS.</div>
+      <div class="wn-col" style="border-left-color:#1c2210"><div class="wn-accent" style="color:var(--acid)">Brief</div><h4>Starts With the Sound</h4><p>Every cover begins with a listen — not a brief. We sit with the music. The mood, the tempo, the texture, what the artist is trying to say. The image needs to feel like the sound, not just illustrate it from a distance.</p></div>
+      <div class="wn-col" style="border-left-color:#1c2210"><div class="wn-accent" style="color:var(--acid)">Process</div><h4>Concept to Final</h4><p>Moodboards, colour exploration, typography tests, composition drafts — all built around the track. Multiple directions developed and refined together until the visual hits as hard as the audio and both feel like one thing.</p></div>
+      <div class="wn-col" style="border-left-color:#1c2210"><div class="wn-accent" style="color:var(--acid)">Delivery</div><h4>Every Platform</h4><p>Spotify square. Apple Music canvas. Instagram post and Story. YouTube thumbnail. Press kit. We size and adapt for every platform the release will live on — so nothing is missing when the track goes up.</p></div>
+      <div class="wn-stat-row" style="border-top-color:#1c2210"><div class="wn-stat"><div class="wn-n">19+</div><div class="wn-l">Covers Designed</div></div><div class="wn-stat"><div class="wn-n">Singles</div><div class="wn-l">EPs · Albums · Campaigns</div></div><div class="wn-stat"><div class="wn-n">Rap</div><div class="wn-l">Afro · Trap · Pop · R&B</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- SOCIAL MEDIA POSTS -->
@@ -617,12 +672,23 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     <div><div class="sn">04 / 05 — Posts</div><h2 class="sttl">SOCIAL<br>MEDIA</h2></div>
     <p class="ssub" style="padding-right:2.5rem">Feed posts, stories, campaigns. Content that stops the scroll.</p>
   </div>
+  <div class="sec-intro rv" style="padding-right:2.5rem"><p>Social media is where your brand lives every single day — and most brands waste it. We design content that earns attention on a platform that never stops moving. <strong>Feed posts, Reels, Stories, campaign visuals</strong> — all built to stop the scroll and make people stay.</p><p>We work across luxury, hospitality, sports, healthcare and culture. Strategy and aesthetics together — not one without the other.</p></div>
+  <div class="sec-pills rv" style="padding-right:2.5rem"><span class="sec-pill">Feed Posts</span><span class="sec-pill">Reels & Stories</span><span class="sec-pill">Campaigns</span><span class="sec-pill">Content Strategy</span><span class="sec-pill">Luxury & Hospitality</span><span class="sec-pill">Sports</span><span class="sec-pill">Photoshooting</span></div>
   <div class="vlabel rv">Luxury &amp; Hospitality</div>
   <div class="pswrap"><div class="pstrack" id="postsLuxury" style="animation-duration:48s"></div></div>
   <div class="vlabel rv" style="margin-top:2rem">Sports</div>
   <div class="pswrap"><div class="pstrack" id="postsSports" style="animation-duration:28s;animation-direction:normal"></div></div>
   <div class="vlabel rv" style="margin-top:2rem">Photoshooting</div>
   <div class="pswrap"><div class="pstrack" id="postsDesign" style="animation-duration:90s"></div></div>
+  <div class="work-note" style="background:#05080f;border-top:1px solid #2a3a60">
+    <div class="wn-grid">
+      <div class="wn-statement" style="border-bottom-color:#2a3a60">BUILT FOR BRANDS<br>THAT SHOW UP EVERY DAY.</div>
+      <div class="wn-col" style="border-left-color:#2a3a60"><div class="wn-accent" style="color:var(--retro-c)">Luxury</div><h4>Hilton & Hospitality</h4><p>Seasonal campaigns, brunch launches, festive content — designed to match the premium feel of the brand while making the offer impossible to scroll past. Posts that sell the experience before the guest checks the date.</p></div>
+      <div class="wn-col" style="border-left-color:#2a3a60"><div class="wn-accent" style="color:var(--retro-r)">Sports</div><h4>HUSA FC & Beyond</h4><p>Match day graphics, training content, victory announcements, player features. Football content that keeps the fanbase fired up between games and slowly builds the club's visual identity into something people are proud to share.</p></div>
+      <div class="wn-col" style="border-left-color:#2a3a60"><div class="wn-accent" style="color:var(--acid)">Editorial</div><h4>Photoshooting</h4><p>Directed shoots built for the feed. Every frame composed for the platform — the light, the angle, the crop, the vibe. Photography that earns attention before anyone reads the caption, and keeps it after they do.</p></div>
+      <div class="wn-stat-row" style="border-top-color:#2a3a60"><div class="wn-stat"><div class="wn-n">Hilton</div><div class="wn-l">Taghazout Bay Resort & Spa</div></div><div class="wn-stat"><div class="wn-n">HUSA</div><div class="wn-l">Hassania Union Sport Agadir</div></div><div class="wn-stat"><div class="wn-n">Elide</div><div class="wn-l">Fitness Club Agadir</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- ARTS -->
@@ -632,6 +698,8 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     <div><div class="sn">04b — Arts</div><h2 class="sttl">GRAFFITI<br>&amp; ART</h2></div>
     <p class="ssub">Pop art paintings, mixed media, original canvas works. Culture you can touch.</p>
   </div>
+  <div class="sec-intro rv" style="padding:0 2.5rem 2.8rem"><p>Art that refuses to sit quietly inside a frame. We paint murals, create canvas works, take commissions, and build pop art pieces that <strong>command the space they're in</strong> — whether that's a gallery wall, a bedroom, or a street corner.</p><p>Our work pulls from graffiti culture, pop art, street aesthetics and fine art techniques — then collides them deliberately. Made to be felt, not just seen.</p></div>
+  <div class="sec-pills rv" style="padding:0 2.5rem 2.5rem"><span class="sec-pill">Street Murals</span><span class="sec-pill">Canvas Paintings</span><span class="sec-pill">Pop Art</span><span class="sec-pill">Commissions</span><span class="sec-pill">Mixed Media</span><span class="sec-pill">Art Direction</span></div>
   <div class="arts-grid rv">
     <div class="art-card">
       <img class="art-img" src="./assetes/images/arts/art-1.png" alt="Looney Tach" loading="lazy">
@@ -690,6 +758,15 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
       </div>
     </div>
   </div>
+  <div class="work-note" style="background:#09060a;border-top:1px solid var(--brd)">
+    <div class="wn-grid">
+      <div class="wn-statement" style="color:var(--retro-r);border-bottom-color:#2a1a1a">CULTURE YOU CAN<br>SEE FROM THE STREET.</div>
+      <div class="wn-col" style="border-left-color:#2a1a1a"><div class="wn-accent" style="color:var(--retro-r)">Pop Art</div><h4>Icons Reimagined</h4><p>Looney Tunes through a Moroccan street lens. Scarface rebuilt in oil. Sylvester in Louis Vuitton. We take icons everyone already knows and reconstruct them until they say something new — and say it loud enough to fill a wall.</p></div>
+      <div class="wn-col" style="border-left-color:#2a1a1a"><div class="wn-accent" style="color:var(--retro-r)">Canvas</div><h4>Original Works</h4><p>Acrylic, oil, mixed media — every piece made by hand and built to last. We take commissions for personal collections, gallery spaces, brand environments and hospitality interiors. Original art that commands the room it lives in.</p></div>
+      <div class="wn-col" style="border-left-color:#2a1a1a"><div class="wn-accent" style="color:var(--retro-r)">Murals</div><h4>Walls & Street</h4><p>Large-scale murals that carry the same precision as canvas work — just bigger. We paint walls for brands, events and communities. Art that turns a surface into a landmark and a blank space into a destination worth photographing.</p></div>
+      <div class="wn-stat-row" style="border-top-color:#2a1a1a"><div class="wn-stat"><div class="wn-n">6+</div><div class="wn-l">Original Works Shown</div></div><div class="wn-stat"><div class="wn-n">Canvas</div><div class="wn-l">Murals · Pop Art · Commission</div></div><div class="wn-stat"><div class="wn-n">Open</div><div class="wn-l">Taking Commissions Now</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- WEBSITES -->
@@ -698,6 +775,8 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     <div><div class="sn">05 / 05 — Web</div><h2 class="sttl">WEBSITE<br>CREATION</h2></div>
     <p class="ssub">Custom websites built for brands, artists and events.</p>
   </div>
+  <div class="sec-intro rv"><p>We build websites from scratch — no templates, no page builders, no compromises. Every site is designed to match the brand it represents and <strong>built to actually perform</strong>: fast, sharp, and conversion-focused without losing the aesthetic.</p><p>Design, development, copy direction, image sourcing, testing, launch. One team, one vision — we handle everything end to end so you don't need to manage five different people just to get a site live.</p></div>
+  <div class="sec-pills rv"><span class="sec-pill">Custom Build</span><span class="sec-pill">Brand Sites</span><span class="sec-pill">E-Commerce</span><span class="sec-pill">Artist Portfolios</span><span class="sec-pill">Event Pages</span><span class="sec-pill">Performance & SEO</span></div>
   <div class="wg">
     <div class="wc rv" style="transition-delay:.06s">
       <div class="wc-bar"><div class="wc-dots"><div class="wc-dot"></div><div class="wc-dot"></div><div class="wc-dot"></div></div><div class="wc-url">noir-fragrance.com</div></div>
@@ -713,6 +792,15 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
       <div class="wc-bar"><div class="wc-dots"><div class="wc-dot"></div><div class="wc-dot"></div><div class="wc-dot"></div></div><div class="wc-url">atlas-collective.co</div></div>
       <div class="wc-screen"><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#060a06"/><defs><radialGradient id="ws3" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#0c6020" stop-opacity=".5"/><stop offset="100%" stop-color="#060a06" stop-opacity="0"/></radialGradient></defs><rect width="400" height="300" fill="url(#ws3)"/><rect x="0" y="0" width="400" height="32" fill="rgba(6,10,6,.9)"/><text x="200" y="20" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="9" fill="rgba(255,255,255,.4)" letter-spacing="8">ATLAS</text><circle cx="200" cy="148" r="68" fill="none" stroke="rgba(184,168,152,.2)"/><circle cx="200" cy="148" r="44" fill="none" stroke="rgba(184,168,152,.28)"/><circle cx="200" cy="148" r="18" fill="none" stroke="rgba(184,168,152,.4)"/><text x="200" y="248" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="16" fill="rgba(184,168,152,.8)" letter-spacing="8">ATLAS COLLECTIVE</text></svg><div class="wc-sov"><span>VIEW PROJECT</span></div></div>
       <div class="wc-info"><div class="wc-title">ATLAS COLLECTIVE</div><div class="wc-desc">Magazine · Events · Community</div></div>
+    </div>
+  </div>
+  <div class="work-note" style="margin-top:2.5rem">
+    <div class="wn-grid">
+      <div class="wn-statement">DIGITAL HOMES<br>THAT DO THE WORK.</div>
+      <div class="wn-col"><div class="wn-accent" style="color:var(--stone)">Design</div><h4>Zero Templates</h4><p>Every site starts from a blank canvas — designed specifically for the brand, the audience and the goal. The feel, the flow, the small details that make someone trust you the moment the page loads and keep browsing rather than closing the tab.</p></div>
+      <div class="wn-col"><div class="wn-accent" style="color:var(--stone)">Code</div><h4>Fast & Sharp</h4><p>Clean code, optimised assets, mobile-first layouts built to perform. Sites that load fast, rank on search and look exactly right on every screen — because a beautiful site that loads slowly is just an expensive disappointment nobody returns to.</p></div>
+      <div class="wn-col"><div class="wn-accent" style="color:var(--stone)">Process</div><h4>End to End</h4><p>Design, development, copy, images, testing, launch. One team, one vision, no handoffs to chase. We run everything from the first wireframe to the day the site goes live — and we don't stop until it works exactly right.</p></div>
+      <div class="wn-stat-row"><div class="wn-stat"><div class="wn-n">NOIR</div><div class="wn-l">Luxury Fragrance — E-Commerce</div></div><div class="wn-stat"><div class="wn-n">RIFT</div><div class="wn-l">Music Collective — Events & Portfolio</div></div><div class="wn-stat"><div class="wn-n">ATLAS</div><div class="wn-l">Magazine & Community Hub</div></div></div>
     </div>
   </div>
 </section>
@@ -782,9 +870,9 @@ const showsData=[
   {title:'PULSE DISCOTHÈQUE',client:'Pulse Night',cat:'CLUB NIGHT',
    yt:'OQkLbRLJi_A'},
   {title:'EXCLUSIVE SHOW',client:'Empty Heads Production',cat:'EVENT COVERAGE',
-   od:'https://1drv.ms/v/c/542E54BEE2867BCA/IQB7tCIttOc9Q4BnLCcYV8qAAXKiKxvaTRlEHyD9Nf60_SM?e=nwOZsC'},
+   f:'🏆🇲🇦TRADING RETREAT 2025🇲🇦🏆This was more than a event, it was a live changing experience.Tr.mp4'},
   {title:'FESTIVAL COVERAGE',client:'Empty Heads Production',cat:'FESTIVAL',
-   od:'https://1drv.ms/v/c/542E54BEE2867BCA/IQDdNL6YM6UgRqeW7r0Dq33dAeto3a2j1etIPede7t37bmg?e=ob7JEC'},
+   f:'Dive into our daily dance shows, live DJ performances, and unparalleled ocean views from our two.mp4'},
 ];
 
 const showsGrid=document.getElementById('showsGrid');
@@ -792,6 +880,8 @@ showsData.forEach(s=>{
   const div=document.createElement('div');div.className='sc';
   const thumbInner=s.yt
     ?`<iframe src="https://www.youtube.com/embed/${s.yt}?autoplay=1&mute=1&loop=1&playlist=${s.yt}&rel=0&controls=0&playsinline=1" frameborder="0" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;pointer-events:none"></iframe>`
+    :s.f
+    ?`<video src="${vs(s.f)}" autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none"></video>`
     :`<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;background:linear-gradient(135deg,#090912 0%,#13131f 100%)">
         <svg viewBox="0 0 60 60" width="54" height="54"><circle cx="30" cy="30" r="28" fill="none" stroke="rgba(184,168,152,.3)" stroke-width="1.5"/><polygon points="24,19 24,41 44,30" fill="rgba(184,168,152,.85)"/></svg>
         <span style="font-family:var(--fm);font-size:.38rem;letter-spacing:.18em;text-transform:uppercase;color:var(--stone)">CLICK TO WATCH ↗</span>
@@ -800,11 +890,13 @@ showsData.forEach(s=>{
     <div class="sc-thumb" style="position:relative;aspect-ratio:16/9;overflow:hidden;background:#030305">
       ${thumbInner}
       <div class="sc-cat" style="position:absolute;top:.7rem;left:.7rem;z-index:4;font-family:var(--fm);font-size:.42rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:#000;color:var(--stone);padding:.2rem .5rem">${s.cat}</div>
-      ${s.yt?'<div class="sc-play" style="z-index:5"><div class="sc-pb"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12" fill="white"/></svg></div></div>':''}
+      ${(s.yt||s.f)?'<div class="sc-play" style="z-index:5"><div class="sc-pb"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12" fill="white"/></svg></div></div>':''}
     </div>
     <div class="sc-info"><div class="sc-tag">${s.cat}</div><div class="sc-title">${s.title}</div><div class="sc-meta"><span>${s.client}</span></div></div>`;
   if(s.yt){
     div.addEventListener('click',()=>openEmbed(`https://www.youtube.com/embed/${s.yt}?autoplay=1&mute=1&rel=0`));
+  }else if(s.f){
+    div.addEventListener('click',()=>openVideoFile(s.f));
   }else{
     div.addEventListener('click',()=>window.open(s.od,'_blank'));
   }
@@ -820,6 +912,14 @@ const reelsData=[
   {f:'Join us this week for a fantastic day by the pool with stunning ocean views, delicious Mexican c.mp4',title:'POOL DAY',client:'Pulse Taghazout',cat:'Reel',v:'980K'},
   {f:'🎥 Day 2 done of pre-season preparations , Thank you very much to @sharjahfc  with sincere grati.mp4',title:'SHARJAH FC',client:'@sharjahfc',cat:'Sport',v:'320K'},
   {f:'إنجاز جديد في منطقة سوس ماسة! 🌟 نحن سعداء بالإعلان عن نجاح عملية العلاج بالأشعة الداخلية لعلاج.mp4',title:'SOUSS MASSA',client:'Medical',cat:'Healthcare',v:'280K'},
+  {f:'@pulsetaghazoutbay !! Where the pulse never stops. Experience electrifying nights at Pulse Night.mp4',title:'PULSE NIGHTS',client:'@pulsetaghazoutbay',cat:'Club',v:'1.5M'},
+  {f:'Dive into our daily dance shows, live DJ performances, and unparalleled ocean views from our two.mp4',title:'DANCE SHOWS',client:'Pulse Taghazout',cat:'Show',v:'870K'},
+  {f:'Experience the magic of the festive season at the lobby lounge of Hilton Taghazout Bay Beach Res.mp4',title:'HILTON XMAS',client:'Hilton Resort',cat:'Luxury',v:'440K'},
+  {f:"Le samedi dernier, une journée pleine d'émotion et de solidarité s'est déroulée à TARGANT TAGHAZ.mp4",title:'TARGANT EVENT',client:'Community',cat:'Event',v:'310K'},
+  {f:'Pulse ! Feel the vibes at Pulse Discothèque! Invite your friends to join the party from Tuesday.mp4',title:'PULSE VIBES',client:'Pulse Discothèque',cat:'Club',v:'1.2M'},
+  {f:'Rejoignez-nous pour un brunch exclusif à partir de 13h à 390 MAD par personne, avec accès à la p.mp4',title:'HILTON BRUNCH',client:'Hilton Resort',cat:'Luxury',v:'560K'},
+  {f:"🎥Coupe du Trône 2024 🇲🇦• #victory Kawkab Athlétique Club Marrakech 🆚 Hassania Union Sport d'.mp4",title:'COUPE DU TRÔNE',client:'HUSA FC',cat:'Sport',v:'680K'},
+  {f:'🏆🇲🇦TRADING RETREAT 2025🇲🇦🏆This was more than a event, it was a live changing experience.Tr.mp4',title:'TRADING RETREAT',client:'Corporate',cat:'Event',v:'180K'},
 ];
 
 function mkReelCard(d){
