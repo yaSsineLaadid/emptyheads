@@ -60,7 +60,8 @@ nav.stk{background:rgba(0,0,0,.95);backdrop-filter:blur(18px);border-bottom-colo
 .hero-video-wrap{position:absolute;inset:0;z-index:1;overflow:hidden;background:#000}
 .hero-video{width:100%;height:100%;object-fit:cover;display:block;opacity:.8}
 .hero-video-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.25) 55%,rgba(0,0,0,.35) 100%)}
-.htagline{position:absolute;z-index:2;top:11rem;left:2.5rem;right:2.5rem;font-family:var(--fd);font-size:clamp(3rem,9vw,9rem);line-height:.85;letter-spacing:-.01em;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.6)}
+.htagline{position:absolute;z-index:2;top:50%;left:2.5rem;right:2.5rem;transform:translateY(-50%);text-align:center;font-family:var(--fd);font-size:clamp(3rem,9vw,9rem);line-height:.85;letter-spacing:-.01em;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.6)}
+#tagCycle{display:inline-block;transition:opacity .25s ease}
 .heyebrow{position:relative;z-index:2;font-family:var(--fm);font-size:.5rem;letter-spacing:.28em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:.9rem;margin-bottom:1.5rem;opacity:0;animation:fu .6s ease 1.1s forwards}
 .heyebrow::before{content:'';width:32px;height:1px;background:var(--stone)}
 .hh1{font-family:var(--fd);font-size:clamp(5rem,18vw,18rem);line-height:.83;letter-spacing:-.01em}
@@ -429,7 +430,7 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nlogo">
-    <img src="./assetes/logo/e1.png" alt="EMPTY HEADS" class="nlogo-img"
+    <img src="./assetes/logo/e1-transparent.png" alt="EMPTY HEADS" class="nlogo-img"
       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <span style="display:none;align-items:center;gap:.7rem">
       <div class="nbadge">EH</div>
@@ -457,13 +458,9 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
     </video>
   </div>
   <h1 class="htagline">
-    <span class="wl"><span>STOP THE</span></span>
-    <span class="wl"><span>SCROLL.</span></span>
+    <span class="wl"><span>EMPTY</span></span>
+    <span class="wl"><span id="tagCycle">YOUR HEAD</span></span>
   </h1>
-<span class="icon3d i3a" style="top:18%;right:14%;--id:9s;--idl:0s;--ic:rgba(198,241,53,.55)"><span class="icon3d-i"><svg width="56" height="56" viewBox="0 0 56 56" fill="none"><rect x="4" y="16" width="48" height="34" rx="5" stroke="#c6f135" stroke-width="1.5" fill="#c6f135" fill-opacity=".05"/><circle cx="28" cy="33" r="11" stroke="#c6f135" stroke-width="1.5"/><circle cx="28" cy="33" r="5" fill="#c6f135" fill-opacity=".3"/><path d="M18 16l5-7h10l5 7" stroke="#c6f135" stroke-width="1.5" stroke-linejoin="round"/><circle cx="44" cy="23" r="2.5" fill="#c6f135"/></svg></span></span>
-<span class="icon3d i3b" style="top:48%;left:3%;--id:11s;--idl:2s;--ic:rgba(224,64,48,.5)"><span class="icon3d-i"><svg width="44" height="44" viewBox="0 0 44 44" fill="none"><polygon points="22,3 41,22 22,41 3,22" stroke="#e04030" stroke-width="1.5" fill="#e04030" fill-opacity=".07"/><polygon points="22,3 41,22 22,14" fill="#e04030" fill-opacity=".28"/><polygon points="22,41 3,22 22,30" fill="#e04030" fill-opacity=".14"/></svg></span></span>
-<span class="icon3d i3a" style="bottom:24%;left:19%;--id:13s;--idl:4s;--ic:rgba(0,191,165,.45)"><span class="icon3d-i"><svg width="50" height="56" viewBox="0 0 50 56" fill="none"><path d="M14 44V12L44 5V37" stroke="#00bfa5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="44" r="6" stroke="#00bfa5" stroke-width="1.5" fill="#00bfa5" fill-opacity=".12"/><circle cx="39" cy="37" r="6" stroke="#00bfa5" stroke-width="1.5" fill="#00bfa5" fill-opacity=".12"/></svg></span></span>
-<span class="icon3d i3b" style="top:26%;left:36%;--id:17s;--idl:1s;--ic:rgba(184,168,152,.3)"><span class="icon3d-i"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 2L19 11H28L21 17.5L23.5 27L15 21.5L6.5 27L9 17.5L2 11H11Z" stroke="#b8a898" stroke-width="1.2" fill="#b8a898" fill-opacity=".1"/></svg></span></span>
   <div class="heyebrow">Creative Studio — Est. 2024</div>
   <div class="hbot">
     <p class="hdesc">Brand Identity · Social Reels · Music Covers<br>Graffiti Art · Web Design</p>
@@ -834,18 +831,136 @@ footer{background:var(--bg2);border-top:1px solid var(--brd);padding:3.5rem 2.5r
   <div class="wg">
     <div class="wc rv" style="transition-delay:.06s">
       <div class="wc-bar"><div class="wc-dots"><div class="wc-dot"></div><div class="wc-dot"></div><div class="wc-dot"></div></div><div class="wc-url">noir-fragrance.com</div></div>
-      <div class="wc-screen"><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#050505"/><rect x="0" y="0" width="400" height="32" fill="#0a0a0a"/><text x="200" y="20" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="9" fill="rgba(255,255,255,.4)" letter-spacing="8">NOIR</text><rect x="20" y="44" width="360" height="180" fill="#0d0d0d"/><text x="200" y="126" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="44" fill="#fff">NOIR</text><text x="200" y="158" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.35)" letter-spacing="7">LUXURY FRAGRANCE</text><rect x="164" y="172" width="72" height="18" fill="#fff"/><text x="200" y="184" text-anchor="middle" dominant-baseline="middle" font-family="'Space Mono',monospace" font-size="5.5" fill="#000" letter-spacing="3">EXPLORE</text><rect x="20" y="240" width="110" height="36" fill="#0d0d0d" stroke="#1a1a1a" stroke-width=".5"/><rect x="144" y="240" width="110" height="36" fill="#0d0d0d" stroke="#1a1a1a" stroke-width=".5"/><rect x="268" y="240" width="112" height="36" fill="#0d0d0d" stroke="#1a1a1a" stroke-width=".5"/></svg><div class="wc-sov"><span>VIEW PROJECT</span></div></div>
-      <div class="wc-info"><div class="wc-title">NOIR</div><div class="wc-desc">E-commerce · Brand site · Art direction</div></div>
+      <div class="wc-screen"><div class="wc-pf"><svg viewBox="0 0 400 900" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="900" fill="#050505"/>
+        <rect x="0" y="0" width="400" height="32" fill="#0a0a0a"/>
+        <text x="20" y="16" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#fff" letter-spacing="6">NOIR</text>
+        <path d="M368 11h16v1.6h-16zM368 15.2h16v1.6h-16zM368 19.4h11v1.6h-11z" fill="rgba(255,255,255,.5)"/>
+        <rect x="0" y="32" width="400" height="290" fill="#0d0d0d"/>
+        <defs><linearGradient id="nb1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2c2c2c"/><stop offset="100%" stop-color="#060606"/></linearGradient></defs>
+        <rect x="176" y="80" width="48" height="92" rx="6" fill="url(#nb1)" stroke="rgba(255,255,255,.15)"/>
+        <rect x="190" y="64" width="20" height="20" fill="url(#nb1)" stroke="rgba(255,255,255,.15)"/>
+        <text x="200" y="212" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="40" fill="#fff" letter-spacing="4">NOIR</text>
+        <text x="200" y="240" text-anchor="middle" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.4)" letter-spacing="6">LUXURY FRAGRANCE</text>
+        <rect x="160" y="258" width="80" height="20" fill="#fff"/>
+        <text x="200" y="269" text-anchor="middle" dominant-baseline="middle" font-family="'Space Mono',monospace" font-size="6" fill="#000" letter-spacing="2">SHOP NOW</text>
+        <rect x="0" y="322" width="400" height="250" fill="#050505"/>
+        <text x="20" y="350" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.4)" letter-spacing="4">THE COLLECTION</text>
+        <rect x="20" y="366" width="112" height="120" fill="#141414"/>
+        <rect x="144" y="366" width="112" height="120" fill="#141414"/>
+        <rect x="268" y="366" width="112" height="120" fill="#141414"/>
+        <text x="76" y="502" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="12" fill="#fff">NOIR NO.1</text>
+        <text x="200" y="502" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="12" fill="#fff">NOIR NO.2</text>
+        <text x="324" y="502" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="12" fill="#fff">NOIR NO.3</text>
+        <text x="76" y="518" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.4)">$120</text>
+        <text x="200" y="518" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.4)">$140</text>
+        <text x="324" y="518" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.4)">$160</text>
+        <rect x="0" y="572" width="400" height="150" fill="#0a0a0a"/>
+        <text x="200" y="642" text-anchor="middle" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.6)">"A SCENT THAT WALKS INTO THE ROOM FIRST."</text>
+        <text x="200" y="664" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.35)" letter-spacing="2">— EDITOR'S PICK, VOGUE</text>
+        <text x="200" y="692" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="13" fill="#e9c46a" letter-spacing="4">★ ★ ★ ★ ★</text>
+        <rect x="0" y="722" width="400" height="178" fill="#0a0a0a"/>
+        <text x="200" y="764" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="20" fill="#fff" letter-spacing="4">JOIN THE HOUSE</text>
+        <rect x="70" y="784" width="200" height="24" fill="none" stroke="rgba(255,255,255,.3)"/>
+        <rect x="270" y="784" width="60" height="24" fill="#fff"/>
+        <text x="300" y="796" text-anchor="middle" dominant-baseline="middle" font-family="'Space Mono',monospace" font-size="6" fill="#000" letter-spacing="2">JOIN</text>
+        <text x="200" y="872" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.3)" letter-spacing="3">© NOIR PARFUM — ALL RIGHTS RESERVED</text>
+      </svg></div><div class="wc-sov"><span>VIEW PROJECT</span></div></div>
+      <div class="wc-info"><div class="wc-title">NOIR</div><div class="wc-desc">E-commerce · Full homepage scroll</div></div>
     </div>
     <div class="wc rv" style="transition-delay:.12s">
       <div class="wc-bar"><div class="wc-dots"><div class="wc-dot"></div><div class="wc-dot"></div><div class="wc-dot"></div></div><div class="wc-url">riftcollective.io</div></div>
-      <div class="wc-screen"><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#060810"/><defs><radialGradient id="ws2" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#2030a0" stop-opacity=".6"/><stop offset="100%" stop-color="#060810" stop-opacity="0"/></radialGradient></defs><rect width="400" height="300" fill="url(#ws2)"/><rect x="0" y="0" width="400" height="32" fill="rgba(6,8,16,.9)"/><text x="200" y="20" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="9" fill="rgba(255,255,255,.4)" letter-spacing="8">RIFT</text><polygon points="200,78 230,146 200,146" fill="rgba(255,255,255,.8)"/><polygon points="200,214 170,146 200,146" fill="rgba(255,255,255,.3)"/><text x="200" y="238" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="20" fill="rgba(255,255,255,.9)" letter-spacing="6">RIFT COLLECTIVE</text><text x="200" y="260" text-anchor="middle" font-family="'Space Mono',monospace" font-size="5.5" fill="rgba(255,255,255,.3)" letter-spacing="5">MUSIC — ART — CULTURE</text></svg><div class="wc-sov"><span>VIEW PROJECT</span></div></div>
-      <div class="wc-info"><div class="wc-title">RIFT COLLECTIVE</div><div class="wc-desc">Artist site · Events · Portfolio</div></div>
+      <div class="wc-screen"><div class="wc-pf"><svg viewBox="0 0 400 900" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="900" fill="#060810"/>
+        <defs><radialGradient id="ws2" cx="50%" cy="30%" r="60%"><stop offset="0%" stop-color="#2030a0" stop-opacity=".55"/><stop offset="100%" stop-color="#060810" stop-opacity="0"/></radialGradient></defs>
+        <rect width="400" height="320" fill="url(#ws2)"/>
+        <rect x="0" y="0" width="400" height="32" fill="rgba(6,8,16,.9)"/>
+        <text x="20" y="16" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#fff" letter-spacing="6">RIFT</text>
+        <circle cx="372" cy="16" r="2" fill="rgba(255,255,255,.4)"/><circle cx="384" cy="16" r="2" fill="rgba(255,255,255,.4)"/>
+        <polygon points="200,70 232,142 200,142" fill="rgba(255,255,255,.85)"/>
+        <polygon points="200,214 168,142 200,142" fill="rgba(255,255,255,.32)"/>
+        <text x="200" y="238" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="24" fill="rgba(255,255,255,.92)" letter-spacing="4">RIFT COLLECTIVE</text>
+        <text x="200" y="262" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6.5" fill="rgba(255,255,255,.4)" letter-spacing="5">MUSIC — ART — CULTURE</text>
+        <rect x="160" y="280" width="80" height="20" fill="none" stroke="#fff"/>
+        <text x="200" y="291" text-anchor="middle" dominant-baseline="middle" font-family="'Space Mono',monospace" font-size="6" fill="#fff" letter-spacing="2">LISTEN NOW</text>
+        <rect x="0" y="322" width="400" height="200" fill="#060810"/>
+        <text x="20" y="350" font-family="'Space Mono',monospace" font-size="7" fill="rgba(120,150,255,.85)" letter-spacing="4">LATEST RELEASE</text>
+        <defs><linearGradient id="rft1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3a4fd0"/><stop offset="100%" stop-color="#0d1130"/></linearGradient></defs>
+        <rect x="20" y="366" width="120" height="120" fill="url(#rft1)"/>
+        <circle cx="80" cy="426" r="18" fill="rgba(0,0,0,.5)"/>
+        <polygon points="74,418 74,434 90,426" fill="#fff"/>
+        <text x="156" y="392" font-family="'Bebas Neue',sans-serif" font-size="17" fill="#fff">MIDNIGHT SIGNAL</text>
+        <text x="156" y="410" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.4)">SINGLE — 2025</text>
+        <rect x="156" y="424" width="4" height="14" fill="rgba(255,255,255,.5)"/><rect x="164" y="418" width="4" height="26" fill="rgba(255,255,255,.7)"/><rect x="172" y="428" width="4" height="10" fill="rgba(255,255,255,.4)"/><rect x="180" y="414" width="4" height="30" fill="rgba(255,255,255,.8)"/><rect x="188" y="422" width="4" height="16" fill="rgba(255,255,255,.5)"/><rect x="196" y="420" width="4" height="20" fill="rgba(255,255,255,.6)"/>
+        <rect x="0" y="522" width="400" height="200" fill="#080a16"/>
+        <text x="20" y="550" font-family="'Space Mono',monospace" font-size="7" fill="rgba(120,150,255,.85)" letter-spacing="4">ON TOUR</text>
+        <rect x="20" y="566" width="360" height="42" fill="#0e1024" stroke="#1a1e3a"/>
+        <rect x="20" y="616" width="360" height="42" fill="#0e1024" stroke="#1a1e3a"/>
+        <rect x="20" y="666" width="360" height="42" fill="#0e1024" stroke="#1a1e3a"/>
+        <text x="40" y="592" font-family="'Bebas Neue',sans-serif" font-size="13" fill="#fff">CASABLANCA — LE DOME</text>
+        <text x="40" y="642" font-family="'Bebas Neue',sans-serif" font-size="13" fill="#fff">MARRAKECH — ARENA</text>
+        <text x="40" y="692" font-family="'Bebas Neue',sans-serif" font-size="13" fill="#fff">AGADIR — LA SCENE</text>
+        <text x="360" y="592" text-anchor="end" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.4)">SEP 12</text>
+        <text x="360" y="642" text-anchor="end" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.4)">SEP 20</text>
+        <text x="360" y="692" text-anchor="end" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.4)">OCT 03</text>
+        <rect x="0" y="722" width="400" height="120" fill="#060810"/>
+        <rect x="20" y="738" width="112" height="90" fill="#10142a"/>
+        <rect x="144" y="738" width="112" height="90" fill="#10142a"/>
+        <rect x="268" y="738" width="112" height="90" fill="#10142a"/>
+        <rect x="0" y="842" width="400" height="58" fill="#04050c"/>
+        <text x="200" y="875" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.3)" letter-spacing="3">© RIFT COLLECTIVE — ALL RIGHTS RESERVED</text>
+      </svg></div><div class="wc-sov"><span>VIEW PROJECT</span></div></div>
+      <div class="wc-info"><div class="wc-title">RIFT COLLECTIVE</div><div class="wc-desc">Artist site · Full homepage scroll</div></div>
     </div>
     <div class="wc rv" style="transition-delay:.18s">
       <div class="wc-bar"><div class="wc-dots"><div class="wc-dot"></div><div class="wc-dot"></div><div class="wc-dot"></div></div><div class="wc-url">atlas-collective.co</div></div>
-      <div class="wc-screen"><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="300" fill="#060a06"/><defs><radialGradient id="ws3" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#0c6020" stop-opacity=".5"/><stop offset="100%" stop-color="#060a06" stop-opacity="0"/></radialGradient></defs><rect width="400" height="300" fill="url(#ws3)"/><rect x="0" y="0" width="400" height="32" fill="rgba(6,10,6,.9)"/><text x="200" y="20" text-anchor="middle" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="9" fill="rgba(255,255,255,.4)" letter-spacing="8">ATLAS</text><circle cx="200" cy="148" r="68" fill="none" stroke="rgba(184,168,152,.2)"/><circle cx="200" cy="148" r="44" fill="none" stroke="rgba(184,168,152,.28)"/><circle cx="200" cy="148" r="18" fill="none" stroke="rgba(184,168,152,.4)"/><text x="200" y="248" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="16" fill="rgba(184,168,152,.8)" letter-spacing="8">ATLAS COLLECTIVE</text></svg><div class="wc-sov"><span>VIEW PROJECT</span></div></div>
-      <div class="wc-info"><div class="wc-title">ATLAS COLLECTIVE</div><div class="wc-desc">Magazine · Events · Community</div></div>
+      <div class="wc-screen"><div class="wc-pf"><svg viewBox="0 0 400 900" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="900" fill="#060a06"/>
+        <defs><radialGradient id="ws3" cx="50%" cy="35%" r="60%"><stop offset="0%" stop-color="#0c6020" stop-opacity=".45"/><stop offset="100%" stop-color="#060a06" stop-opacity="0"/></radialGradient></defs>
+        <rect width="400" height="300" fill="url(#ws3)"/>
+        <rect x="0" y="0" width="400" height="32" fill="rgba(6,10,6,.9)"/>
+        <text x="20" y="16" dominant-baseline="middle" font-family="'Bebas Neue',sans-serif" font-size="10" fill="#fff" letter-spacing="6">ATLAS</text>
+        <circle cx="378" cy="16" r="6" fill="none" stroke="rgba(255,255,255,.4)"/>
+        <text x="34" y="60" font-family="'Space Mono',monospace" font-size="5.5" font-weight="700" fill="#b8a898" letter-spacing="2">FEATURE</text>
+        <circle cx="200" cy="150" r="60" fill="none" stroke="rgba(184,168,152,.22)"/>
+        <circle cx="200" cy="150" r="38" fill="none" stroke="rgba(184,168,152,.3)"/>
+        <circle cx="200" cy="150" r="16" fill="none" stroke="rgba(184,168,152,.42)"/>
+        <text x="200" y="234" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="24" fill="#fff" letter-spacing="1">THE NEW WAVE OF</text>
+        <text x="200" y="260" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="24" fill="rgba(184,168,152,.9)" letter-spacing="1">ATLAS STREET CULTURE</text>
+        <text x="200" y="286" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.4)" letter-spacing="2">BY R. AMRANI — 6 MIN READ</text>
+        <rect x="0" y="300" width="400" height="220" fill="#070c07"/>
+        <text x="20" y="326" font-family="'Space Mono',monospace" font-size="7" fill="rgba(184,168,152,.85)" letter-spacing="4">LATEST STORIES</text>
+        <rect x="20" y="342" width="112" height="120" fill="#101710"/>
+        <rect x="144" y="342" width="112" height="120" fill="#101710"/>
+        <rect x="268" y="342" width="112" height="120" fill="#101710"/>
+        <text x="20" y="480" font-family="'Space Mono',monospace" font-size="5" fill="#b8a898" letter-spacing="1">CULTURE</text>
+        <text x="144" y="480" font-family="'Space Mono',monospace" font-size="5" fill="#b8a898" letter-spacing="1">MUSIC</text>
+        <text x="268" y="480" font-family="'Space Mono',monospace" font-size="5" fill="#b8a898" letter-spacing="1">EVENTS</text>
+        <text x="20" y="496" font-family="'Bebas Neue',sans-serif" font-size="12" fill="#fff">SOUK TO STUDIO</text>
+        <text x="144" y="496" font-family="'Bebas Neue',sans-serif" font-size="12" fill="#fff">ATLAS SOUND</text>
+        <text x="268" y="496" font-family="'Bebas Neue',sans-serif" font-size="12" fill="#fff">NIGHT MARKET</text>
+        <rect x="0" y="520" width="400" height="100" fill="#0a0f0a"/>
+        <text x="200" y="558" text-anchor="middle" font-family="'Bebas Neue',sans-serif" font-size="18" fill="#fff" letter-spacing="4">STAY IN THE LOOP</text>
+        <rect x="80" y="576" width="170" height="22" fill="none" stroke="rgba(255,255,255,.3)"/>
+        <rect x="250" y="576" width="70" height="22" fill="#b8a898"/>
+        <text x="285" y="587" text-anchor="middle" dominant-baseline="middle" font-family="'Space Mono',monospace" font-size="6" fill="#000" letter-spacing="2">SUBSCRIBE</text>
+        <rect x="0" y="620" width="400" height="280" fill="#040604"/>
+        <text x="20" y="654" font-family="'Bebas Neue',sans-serif" font-size="20" fill="#fff" letter-spacing="4">ATLAS</text>
+        <text x="20" y="672" font-family="'Space Mono',monospace" font-size="5.5" fill="rgba(255,255,255,.3)">Magazine &amp; Community Hub</text>
+        <text x="20" y="708" font-family="'Space Mono',monospace" font-size="5.5" font-weight="700" fill="#b8a898" letter-spacing="2">READ</text>
+        <text x="20" y="722" font-family="'Space Mono',monospace" font-size="5.5" fill="rgba(255,255,255,.45)">Culture</text>
+        <text x="20" y="734" font-family="'Space Mono',monospace" font-size="5.5" fill="rgba(255,255,255,.45)">Music</text>
+        <text x="20" y="746" font-family="'Space Mono',monospace" font-size="5.5" fill="rgba(255,255,255,.45)">Events</text>
+        <text x="150" y="708" font-family="'Space Mono',monospace" font-size="5.5" font-weight="700" fill="#b8a898" letter-spacing="2">ABOUT</text>
+        <text x="150" y="722" font-family="'Space Mono',monospace" font-size="5.5" fill="rgba(255,255,255,.45)">Our Story</text>
+        <text x="150" y="734" font-family="'Space Mono',monospace" font-size="5.5" fill="rgba(255,255,255,.45)">Contributors</text>
+        <text x="150" y="746" font-family="'Space Mono',monospace" font-size="5.5" fill="rgba(255,255,255,.45)">Contact</text>
+        <text x="280" y="708" font-family="'Space Mono',monospace" font-size="5.5" font-weight="700" fill="#b8a898" letter-spacing="2">FOLLOW</text>
+        <circle cx="286" cy="726" r="8" fill="none" stroke="rgba(255,255,255,.35)"/><circle cx="308" cy="726" r="8" fill="none" stroke="rgba(255,255,255,.35)"/><circle cx="330" cy="726" r="8" fill="none" stroke="rgba(255,255,255,.35)"/>
+        <line x1="20" y1="850" x2="380" y2="850" stroke="rgba(255,255,255,.1)"/>
+        <text x="200" y="876" text-anchor="middle" font-family="'Space Mono',monospace" font-size="6" fill="rgba(255,255,255,.3)" letter-spacing="3">© ATLAS COLLECTIVE — ALL RIGHTS RESERVED</text>
+      </svg></div><div class="wc-sov"><span>VIEW PROJECT</span></div></div>
+      <div class="wc-info"><div class="wc-title">ATLAS COLLECTIVE</div><div class="wc-desc">Magazine · Full homepage scroll</div></div>
     </div>
     <div class="wc rv" style="transition-delay:.24s">
       <div class="wc-bar"><div class="wc-dots"><div class="wc-dot"></div><div class="wc-dot"></div><div class="wc-dot"></div></div><div class="wc-url">pixelandco.studio</div></div>
@@ -980,6 +1095,18 @@ window.addEventListener('load',()=>setTimeout(()=>document.getElementById('ldr')
 // ── Nav scroll ───────────────────────────────────────────────────────────
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('stk',scrollY>50),{passive:true});
+
+// ── Hero tagline word cycle ────────────────────────────────────────────
+const tagCycle=document.getElementById('tagCycle');
+const tagWords=['YOUR HEAD','HEADS'];
+let tagIdx=0;
+setTimeout(()=>{
+  setInterval(()=>{
+    tagIdx=(tagIdx+1)%tagWords.length;
+    tagCycle.style.opacity='0';
+    setTimeout(()=>{tagCycle.textContent=tagWords[tagIdx];tagCycle.style.opacity='1';},250);
+  },2000);
+},2000);
 
 // ── Reveal on scroll — set up first so above-the-fold content isn't stuck
 // waiting behind the heavier carousel-building work further down ─────────
