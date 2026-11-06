@@ -22,8 +22,48 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 button,input,textarea{font:inherit;color:inherit}
 
+
+/* ---------- case sections ---------- */
+#cases{position:relative}
+.case{--bg:#F8F3EC;--fg:#282828;position:sticky;top:var(--stick,0px);z-index:calc(var(--i,0) + 2);background:var(--bg);color:var(--fg);padding:clamp(72px,10vw,150px) var(--pad) clamp(64px,8vw,120px);box-shadow:0 -28px 60px rgba(0,0,0,.16)}
+.case.dark{--fg:#F8F3EC}
+.case .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(16px,2vw,32px);max-width:1680px;margin:0 auto}
+.case-head{grid-column:1/-1;margin-bottom:clamp(28px,4vw,64px)}
+.client{font-family:var(--px);font-size:clamp(17px,1.4vw + 5px,24px);margin-bottom:clamp(10px,1.4vw,20px);opacity:.85}
+.name{font-size:clamp(46px,9.6vw,176px);font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:-.012em;font-variation-settings:"wdth" var(--w,125);text-wrap:balance;overflow-wrap:anywhere}
+.info{grid-column:1/6;align-self:start;position:sticky;top:clamp(76px,9svh,110px)}
+.lead{font-size:clamp(18px,1.15vw + 9px,26px);line-height:1.32;font-weight:500;max-width:30ch;text-wrap:pretty}
+.scope{list-style:none;margin-top:clamp(22px,3vw,44px);max-width:34ch}
+.scope li{font-size:clamp(15px,.6vw + 9px,18px);padding:11px 0;border-top:2px solid currentColor;font-variation-settings:"wdth" 100;font-weight:600}
+.scope li:last-child{border-bottom:2px solid currentColor}
+.more{display:inline-block;margin-top:22px;font-family:var(--px);font-size:19px}
+.media{grid-column:6/-1;min-width:0}
+.main{position:relative;aspect-ratio:4/5;max-height:88svh;width:100%;overflow:hidden;background:rgba(0,0,0,.18);clip-path:inset(0 0 100% 0);transition:clip-path 1.15s cubic-bezier(.77,0,.18,1)}
+.main > *{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.2);transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.main.in{clip-path:inset(0)}
+.main.in > *{transform:none}
+.gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,22px);margin-top:clamp(10px,1.4vw,22px)}
+.gal figure{aspect-ratio:4/5;overflow:hidden;background:rgba(0,0,0,.18);clip-path:inset(0 100% 0 0);transition:clip-path .9s cubic-bezier(.77,0,.18,1) var(--d,0s)}
+.gal figure.in{clip-path:inset(0)}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.15);transition:transform 1.4s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.gal figure.in img{transform:none}
+#studio,#contact,footer{position:relative;z-index:60}
+.index .meta a.more{display:inline-block;margin:0 0 10px;font-family:var(--px);font-size:19px;font-weight:400;text-transform:none;font-variation-settings:normal;opacity:1;padding:0;line-height:1.2;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px;white-space:normal}
+@media (max-width:820px){
+  .case .wrap{display:block}
+  .info{position:static;margin-bottom:28px}
+  .lead{max-width:none}
+  .scope{max-width:none}
+  .main{max-height:none}
+  .case{position:relative;top:auto;box-shadow:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .main,.gal figure{clip-path:none!important;transition:none}
+  .main > *,.gal img{transform:none!important;transition:none}
+}
+
 /* ---------- top bar ---------- */
-.bar{position:fixed;inset:0 0 auto 0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:16px var(--pad);mix-blend-mode:difference;color:#fff;pointer-events:none}
+.bar{position:fixed;inset:0 0 auto 0;z-index:70;display:flex;justify-content:space-between;align-items:center;padding:16px var(--pad);color:var(--ink);pointer-events:none;transition:background-color .35s,color .35s}
 .bar a{pointer-events:auto;text-decoration:none}
 .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-variation-settings:"wdth" 125;font-size:17px;letter-spacing:.02em}
 .logo svg{height:30px;width:auto;display:block;overflow:visible}
@@ -175,6 +215,8 @@ footer{background:var(--ink);color:var(--cream);padding:0 var(--pad) 22px;overfl
     </section>
   </div>
 
+  <section id="cases" aria-label="Selected work in detail"></section>
+
   <section class="sec" id="studio">
     <h2>What we take off your head.</h2>
     <div class="desks">
@@ -253,7 +295,7 @@ const URGENT = /friday|asap|urgent|daba|2am/;
 
 /* ======================== HEAD GEOMETRY ======================== */
 const HW = 600, HH = 800;
-const PTS = [[214,800],[216,700],[212,628],[190,590],[140,566],[102,540],[92,506],[100,474],[90,450],[96,430],[86,412],[96,396],[52,370],[84,342],[110,300],[106,262],[112,218],[128,150],[180,70],[270,18],[380,22],[480,84],[542,190],[556,300],[528,392],[500,452],[498,520],[512,620],[526,700],[532,800]];
+const PTS = [[228,800],[230,716],[236,664],[196,634],[146,616],[116,596],[104,566],[100,546],[96,528],[90,512],[94,494],[84,474],[50,452],[56,430],[80,402],[96,372],[94,346],[104,304],[118,236],[150,148],[226,70],[330,30],[436,44],[512,108],[552,208],[558,318],[542,418],[518,500],[504,566],[506,648],[518,724],[526,800]];
 function splineD(p) {
   let d = `M${p[0][0]} ${p[0][1]}`;
   for (let i = 0; i < p.length - 1; i++) {
@@ -295,27 +337,31 @@ let words = [], userThoughts = [];
 const SIZES = [14, 15, 16, 17, 18, 18, 20, 22, 26];
 
 const ovl = (ax, ay, aw, ah, b) => {
-  const bw = b.w + 6, bh = b.fs * 1.3;
+  const bw = b.w + 12, bh = b.fs * 1.4;
   const ox = Math.max(0, Math.min(ax + aw / 2, b.hx + bw / 2) - Math.max(ax - aw / 2, b.hx - bw / 2));
   const oy = Math.max(0, Math.min(ay + ah / 2, b.hy + bh / 2) - Math.max(ay - ah / 2, b.hy - bh / 2));
   return ox * oy;
 };
 function makeWord(text, opts = {}) {
-  let fs = opts.fs || SIZES[(Math.random() * SIZES.length) | 0], w = 0, best = null;
+  let fs = opts.fs || SIZES[(Math.random() * SIZES.length) | 0], w = 0, best = null, fallback = null;
   for (let round = 0; round < 5 && !best; round++) {
     maskCtx.font = `600 ${fs}px "Pixelify Sans"`;
     w = maskCtx.measureText(text).width;
     let bestScore = 1e9;
-    for (let i = 0; i < 70; i++) {
+    for (let i = 0; i < 160; i++) {
       const x = 70 + Math.random() * 480, y = 30 + Math.random() * 760;
       const hw = w / 2 + 12;
       if (!(insideHead(x, y) && insideHead(x - hw, y) && insideHead(x + hw, y) && insideHead(x - hw, y - fs * .7) && insideHead(x + hw, y + fs * .7) && insideHead(x - hw, y + fs * .7) && insideHead(x + hw, y - fs * .7))) continue;
-      let sc = 0; for (const o of words) sc += ovl(x, y, w + 6, fs * 1.3, o);
-      if (sc < bestScore) { bestScore = sc; best = [x, y]; if (sc === 0) break; }
+      let sc = 0; for (const o of words) sc += ovl(x, y, w + 12, fs * 1.4, o);
+      if (sc === 0) { best = [x, y]; break; }
+      if (sc < bestScore) { bestScore = sc; fallback = [x, y]; }
     }
-    if (!best) fs = Math.max(11, Math.round(fs * .84));
+    if (!best) fs = Math.max(11, Math.round(fs * .86));
   }
-  const [x, y] = best || [330, 300];
+  if (!best && opts.user) best = fallback;
+  if (!best && opts.user) best = [330, 300];
+  if (!best) return null;
+  const [x, y] = best;
   const pal = PAL[(Math.random() * PAL.length) | 0];
   const col = URGENT.test(text) ? PAL[0] : (Math.random() < .3 ? pal : null);
   return {
@@ -332,7 +378,7 @@ function buildWords() {
   const list = PHRASES.slice().sort(() => Math.random() - .5);
   const specs = []; for (let i = 0; i < 58; i++) specs.push([list[i % list.length], SIZES[(Math.random() * SIZES.length) | 0]]);
   specs.sort((a, b) => b[1] - a[1]);
-  for (const [tx, fs] of specs) words.push(makeWord(tx, { fs }));
+  for (const [tx, fs] of specs) { const wd = makeWord(tx, { fs }); if (wd) words.push(wd); }
 }
 
 /* ======================== STATE ======================== */
@@ -510,7 +556,7 @@ function frame(now) {
 /* ======================== PROJECT INDEX ======================== */
 WORK.forEach((w, i) => {
   const li = document.createElement("li");
-  li.innerHTML = `<a href="#work" data-i="${i}">${w.name}</a><div class="meta"><p class="blurb">${w.blurb}</p><div class="tags">${w.tags.map(t => `<span>${t}</span>`).join("")}</div></div>`;
+  li.innerHTML = `<a href="#work" data-i="${i}">${w.name}</a><div class="meta"><p class="blurb">${w.blurb}</p><div class="tags">${w.tags.map(t => `<span>${t}</span>`).join("")}</div><a class="more" href="#case-${w.m}" data-case="${w.m}">See the full project</a></div>`;
   indexEl.appendChild(li);
 });
 const lis = [...indexEl.children];
@@ -559,6 +605,85 @@ function squeeze(x) {
   letters.forEach(l => { const r = l.getBoundingClientRect(), cx = r.left + r.width / 2; const k = Math.exp(-Math.pow((x - cx) / 160, 2)); l.style.fontVariationSettings = `"wdth" ${(125 - 63 * k).toFixed(1)}`; });
 }
 if (!reduce) { mark.addEventListener("pointermove", e => squeeze(e.clientX)); mark.addEventListener("pointerleave", () => letters.forEach(l => l.style.fontVariationSettings = "")); }
+
+
+/* ======================== CASE SECTIONS ======================== */
+document.documentElement.style.setProperty("--len", PROJ0 + NPROJ + 1);
+const CASES = {
+  hilton: { client: "Hilton Taghazout Bay Beach Resort & Spa", bg: "#F8F3EC", dark: 0, alts: ["Gingerbread dessert at the festive buffet", "Brunch spread on the terrace", "Chocolate log cake with gingerbread house"],
+    text: "Content for a five-star resort on the Atlantic coast: the festive lobby lounge, pool days with ocean views, the Sunday brunch coming back, and the shows at night. Shot vertical, cut to move.",
+    scope: ["Vertical reels for the lobby lounge, pool and brunch", "Food and venue photography", "Offer posts with prices and times"] },
+  pulse: { client: "Pulse, the night club of Hilton Taghazout Bay", bg: "#282828", dark: 1, alts: ["Dancer in blue light", "Dancer with a fan under blue light", "Singer under red stage lights"],
+    text: "A night club filmed like a live show. Dancers in mirror armour, DJ sets, the terrace over the ocean. Dark rooms, strong colour, fast cuts, then the logo.",
+    scope: ["Night reels: shows, DJ sets, summer season", "Stage photography in low light", "Weekly programme announcements"] },
+  husa: { client: "Hassania Union Sport d'Agadir", bg: "#FF5E54", dark: 0, alts: ["Husaday matchday poster", "Starting XI poster", "Player portrait from the Botola match"],
+    text: "A season around the club. Training sessions, the pre-season camp with Sharjah FC, the Coupe du Trône 2024 match film, and the posters fans share: scores, starting elevens, match-day moods.",
+    scope: ["Match film: Coupe du Trône 2024", "Training and pre-season reels", "Match-day, full-time and starting XI posters", "Match photography for Botola Pro Inwi"] },
+  retreat: { client: "Trading Retreat 2025", bg: "#FFE459", dark: 0, alts: ["Speaker with the room", "Guests laughing at a session", "Neon lights at the club night"],
+    text: "The organisers called it more than an event. We filmed all of it as it happened: arrivals, a camel ride above the bay, workshops, card games, the club night. Cut into one recap that feels like being there.",
+    scope: ["Full event coverage over several days", "Recap film, almost five minutes", "Shorter cuts for social"] },
+  tilila: { client: "Clinique Tilila", bg: "#0E6BC8", dark: 1, alts: ["Scan on the radiology screen", "Radiologists reading the images", "Interview in Arabic"],
+    text: "Radiology explained by the doctor who does it. One calm interview, scan footage and 3D renders, in French and in Arabic, so patients know what to expect before they walk in.",
+    scope: ["Interview film with the radiologist, French", "Arabic version for the same audience", "Announcement reel for a new treatment in the Souss-Massa region"] },
+  elide: { client: "Elide Fitness Club, Agadir", bg: "#2BBE5D", dark: 0, alts: ["Boxing class announcement", "Weekly challenge post", "Training with a view over Agadir"],
+    text: "Social content for a gym in Agadir. Strength, boxing and a Monday challenge, photographed and written to make people show up. Quiet colour, hard lighting, no stock smiles.",
+    scope: ["Campaign posts for classes and challenges", "Training photography", "Before and after video"] },
+  music: { client: "Moroccan rap and singing", bg: "#6A4DF5", dark: 1, alts: ["Chaos cover", "Ezzayoko cover", "Green March cover"],
+    text: "Cover art for singles and EPs. One square, one idea, readable at thumbnail size. Twenty covers so far, from ice-blue horror to desert propaganda.",
+    scope: ["Single and EP covers", "Chaos, Ezzayoko, Green March, Houdini, Slow, Flows", "Fin Ghadi, Obsessed, Timelapse, Vesso, Villa and more"] },
+  brands: { client: "Football, hair and kit", bg: "#EDE4D3", dark: 0, alts: ["FC Morokko Herne match-day content", "L'Avenue 19 logo and slogan", "Olympic Dchira jersey"],
+    text: "Three identities. A football club rebrand built on Moroccan geometry, a Geneva hair salon with a logo that reads like a shop sign, and a 2025/26 jersey line. Each ships with its guidelines.",
+    scope: ["FC Morokko Herne: social media rebrand", "19th Avenue Coiffure, Geneva: logo, type, charter", "Olympic Dchira: home, third and away kit design"] }
+};
+(() => {
+  const root = $("#cases"); if (!root) return;
+  const VID = new Set(["hilton", "pulse", "husa", "retreat", "tilila"]);
+  const ordered = WORK.map((w, i) => ({ w, i, c: CASES[w.m] }));
+  ordered.forEach(({ w, i, c }) => {
+    const a = document.createElement("article"); a.className = "case" + (c.dark ? " dark" : ""); a.id = "case-" + w.m;
+    a.style.setProperty("--bg", c.bg); a.style.setProperty("--i", i);
+    const main = VID.has(w.m)
+      ? `<video muted loop playsinline preload="none" poster="media/${w.m}.jpg" data-src="media/${w.m}.mp4" aria-label="${w.name} reel"></video>`
+      : `<img src="media/${w.m}.jpg" alt="${c.alts[0]}" loading="lazy">`;
+    const gal = [1, 2, 3].map(n => `<figure style="--d:${(n * .12).toFixed(2)}s"><img src="media/${w.m === "brands" ? "brands" : w.m}_${n}.jpg" alt="${c.alts[n - 1]}" loading="lazy"></figure>`).join("");
+    a.innerHTML = `<div class="wrap"><header class="case-head"><p class="client">${c.client}</p><h2 class="name">${w.name}</h2></header>
+      <div class="info"><p class="lead">${c.text}</p><ul class="scope">${c.scope.map(t => `<li>${t}</li>`).join("")}</ul></div>
+      <div class="media"><figure class="main">${main}</figure><div class="gal">${gal}</div></div></div>`;
+    root.appendChild(a);
+  });
+  const cases = [...root.children];
+  const stick = () => cases.forEach(el => el.style.setProperty("--stick", Math.min(0, innerHeight - el.offsetHeight) + "px"));
+  addEventListener("resize", stick); addEventListener("load", stick); setTimeout(stick, 400); setTimeout(stick, 1600); stick();
+  if ("IntersectionObserver" in window) {
+    const rv = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; rv.unobserve(e.target);
+      const m = e.target.querySelector(".main"); if (m) m.classList.add("in");
+      e.target.querySelectorAll(".gal figure").forEach(f => f.classList.add("in")); }), { threshold: .12, rootMargin: "0px 0px -8% 0px" });
+    root.querySelectorAll(".media").forEach(el => rv.observe(el));
+    const rg = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll("figure").forEach(f => f.classList.add("in")); rg.unobserve(e.target); } }), { threshold: .3 });
+    root.querySelectorAll(".gal").forEach(el => rg.observe(el));
+    const vo = new IntersectionObserver(es => es.forEach(e => {
+      const v = e.target; if (!v.src && v.dataset.src) v.src = v.dataset.src;
+      if (e.isIntersecting && !reduce) v.play().catch(() => {}); else v.pause();
+    }), { rootMargin: "200px 0px", threshold: .05 });
+    root.querySelectorAll("video").forEach(v => vo.observe(v));
+  } else root.querySelectorAll(".main,.gal figure").forEach(el => el.classList.add("in"));
+  const names = cases.map(c => c.querySelector(".name"));
+  const bar = $(".bar"), barEls = [...cases, $("#contact"), $("footer")].filter(Boolean);
+  let dirty = true; addEventListener("scroll", () => { dirty = true; }, { passive: true });
+  (function loop() {
+    if (dirty) { dirty = false;
+      const vhh = innerHeight;
+      let bg = "transparent", fg = "#282828";
+      for (const el of barEls) { const r = el.getBoundingClientRect(); if (r.top <= 24 && r.bottom > 24) { const c = getComputedStyle(el).backgroundColor, m = c.match(/\d+/g); if (m) { bg = c; fg = (.299 * m[0] + .587 * m[1] + .114 * m[2]) < 140 ? "#F8F3EC" : "#282828"; } } }
+      if (bar.dataset.k !== bg + fg) { bar.dataset.k = bg + fg; bar.style.backgroundColor = bg; bar.style.color = fg; }
+      names.forEach(n => { const r = n.getBoundingClientRect(); if (r.bottom < -vhh * .3 || r.top > vhh * 1.3) return;
+        const k = 1 - clamp(Math.abs(r.top + r.height / 2 - vhh * .42) / (vhh * .8)); n.style.setProperty("--w", reduce ? 125 : (66 + 59 * (k * k * (3 - 2 * k))).toFixed(1)); });
+    }
+    requestAnimationFrame(loop);
+  })();
+  document.addEventListener("click", e => { const a = e.target.closest("a[data-case]"); if (!a) return; e.preventDefault();
+    const t = document.getElementById("case-" + a.dataset.case); if (t) scrollTo({ top: t.getBoundingClientRect().top + scrollY, behavior: reduce ? "auto" : "smooth" }); });
+})();
 
 /* ======================== WEBGL2 ART (project windows) ======================== */
 const VS = `#version 300 es
